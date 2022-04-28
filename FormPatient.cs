@@ -44,8 +44,12 @@ namespace HYS
 
         private void buttonSignOut_Click(object sender, EventArgs e)
         {
-            previousForm.Show();
             Close();
+        }
+
+        private void FormPatient_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            previousForm.Show();
         }
     }
 }

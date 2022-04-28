@@ -40,6 +40,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
@@ -61,14 +64,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSignOut = new System.Windows.Forms.Button();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -79,8 +81,6 @@
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -116,7 +116,7 @@
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(763, 9);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 32);
+            this.label14.Size = new System.Drawing.Size(59, 31);
             this.label14.TabIndex = 4;
             this.label14.Text = "HYS";
             // 
@@ -126,7 +126,7 @@
             this.labelDashPatientName.ForeColor = System.Drawing.Color.White;
             this.labelDashPatientName.Location = new System.Drawing.Point(107, 15);
             this.labelDashPatientName.Name = "labelDashPatientName";
-            this.labelDashPatientName.Size = new System.Drawing.Size(159, 20);
+            this.labelDashPatientName.Size = new System.Drawing.Size(160, 21);
             this.labelDashPatientName.TabIndex = 1;
             this.labelDashPatientName.Text = "currentUserName";
             // 
@@ -136,7 +136,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 20);
+            this.label1.Size = new System.Drawing.Size(90, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "Merhaba,";
             // 
@@ -221,6 +221,44 @@
             this.button3.Text = "Gelecek";
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(658, 245);
+            this.tableLayoutPanel4.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("IBM Plex Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(0, 4);
+            this.label6.Margin = new System.Windows.Forms.Padding(0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(190, 21);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Gelecek Randevular";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 33);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(652, 209);
+            this.dataGridView1.TabIndex = 5;
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
@@ -257,7 +295,7 @@
             this.label11.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(69, 23);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(186, 24);
+            this.label11.Size = new System.Drawing.Size(188, 25);
             this.label11.TabIndex = 1;
             this.label11.Text = "Profili Güncelle";
             // 
@@ -291,7 +329,7 @@
             this.label10.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(91, 23);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(153, 24);
+            this.label10.Size = new System.Drawing.Size(155, 25);
             this.label10.TabIndex = 1;
             this.label10.Text = "Randevu İptal";
             // 
@@ -325,7 +363,7 @@
             this.label9.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(103, 23);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 24);
+            this.label9.Size = new System.Drawing.Size(122, 25);
             this.label9.TabIndex = 1;
             this.label9.Text = "Randevu Al";
             // 
@@ -385,7 +423,7 @@
             this.labelPatientTC.ForeColor = System.Drawing.Color.White;
             this.labelPatientTC.Location = new System.Drawing.Point(158, 119);
             this.labelPatientTC.Name = "labelPatientTC";
-            this.labelPatientTC.Size = new System.Drawing.Size(139, 20);
+            this.labelPatientTC.Size = new System.Drawing.Size(140, 21);
             this.labelPatientTC.TabIndex = 9;
             this.labelPatientTC.Text = "currentUserTC";
             // 
@@ -395,7 +433,7 @@
             this.labelPatientSurname.ForeColor = System.Drawing.Color.White;
             this.labelPatientSurname.Location = new System.Drawing.Point(158, 89);
             this.labelPatientSurname.Name = "labelPatientSurname";
-            this.labelPatientSurname.Size = new System.Drawing.Size(189, 20);
+            this.labelPatientSurname.Size = new System.Drawing.Size(190, 21);
             this.labelPatientSurname.TabIndex = 8;
             this.labelPatientSurname.Text = "currentUserSurname";
             // 
@@ -405,7 +443,7 @@
             this.labelPatientName.ForeColor = System.Drawing.Color.White;
             this.labelPatientName.Location = new System.Drawing.Point(158, 59);
             this.labelPatientName.Name = "labelPatientName";
-            this.labelPatientName.Size = new System.Drawing.Size(159, 20);
+            this.labelPatientName.Size = new System.Drawing.Size(160, 21);
             this.labelPatientName.TabIndex = 7;
             this.labelPatientName.Text = "currentUserName";
             // 
@@ -415,7 +453,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(13, 119);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(139, 20);
+            this.label5.Size = new System.Drawing.Size(140, 21);
             this.label5.TabIndex = 6;
             this.label5.Text = "TC Kimlik No:";
             // 
@@ -425,7 +463,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(83, 89);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 20);
+            this.label4.Size = new System.Drawing.Size(70, 21);
             this.label4.TabIndex = 5;
             this.label4.Text = "Soyad:";
             // 
@@ -435,7 +473,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(113, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 20);
+            this.label3.Size = new System.Drawing.Size(40, 21);
             this.label3.TabIndex = 4;
             this.label3.Text = "Ad:";
             // 
@@ -446,7 +484,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(13, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 24);
+            this.label2.Size = new System.Drawing.Size(192, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Hasta Bilgileri";
             // 
@@ -463,47 +501,9 @@
             this.buttonSignOut.UseVisualStyleBackColor = false;
             this.buttonSignOut.Click += new System.EventHandler(this.buttonSignOut_Click);
             // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 1;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.label6, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.dataGridView1, 0, 1);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 2;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(658, 245);
-            this.tableLayoutPanel4.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("IBM Plex Mono", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(0, 5);
-            this.label6.Margin = new System.Windows.Forms.Padding(0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(189, 20);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Gelecek Randevular";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(652, 209);
-            this.dataGridView1.TabIndex = 5;
-            // 
             // FormPatient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 561);
             this.Controls.Add(this.panel2);
@@ -514,6 +514,7 @@
             this.MinimumSize = new System.Drawing.Size(850, 600);
             this.Name = "FormPatient";
             this.Text = "Hasta Menüsü";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPatient_FormClosed);
             this.Load += new System.EventHandler(this.FormPatient_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -522,6 +523,9 @@
             this.panel2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -536,9 +540,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
-            this.tableLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
