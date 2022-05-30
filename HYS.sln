@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HYS", "HYS.csproj", "{FCC6BC5C-5360-4400-B6E4-A9AD1BAA0822}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hysUI", "hysUI.csproj", "{FCC6BC5C-5360-4400-B6E4-A9AD1BAA0822}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalLibrary", "HospitalLibrary\HospitalLibrary.csproj", "{A69FCD2E-67FE-4CD6-A555-3C6123F22373}"
 EndProject
