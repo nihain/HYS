@@ -19,6 +19,11 @@ namespace HospitalTracker
         public string LastName { get; set; }
 
         /// <summary>
+        /// Doctor's gender.
+        /// </summary>
+        public bool Gender { get; set; }
+
+        /// <summary>
         /// Doctor's ID number.
         /// </summary>
         public string ID { get; set; }
