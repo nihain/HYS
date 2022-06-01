@@ -480,11 +480,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("IBM Plex Mono Medm", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("IBM Plex Mono Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(13, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(192, 25);
+            this.label2.Size = new System.Drawing.Size(207, 27);
             this.label2.TabIndex = 3;
             this.label2.Text = "Hasta Bilgileri";
             // 
