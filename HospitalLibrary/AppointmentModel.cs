@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalTracker
+namespace HospitalLibrary
 {
     public class AppointmentModel
     {
