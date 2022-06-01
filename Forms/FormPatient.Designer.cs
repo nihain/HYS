@@ -126,9 +126,9 @@
             this.labelDashPatientName.ForeColor = System.Drawing.Color.White;
             this.labelDashPatientName.Location = new System.Drawing.Point(107, 15);
             this.labelDashPatientName.Name = "labelDashPatientName";
-            this.labelDashPatientName.Size = new System.Drawing.Size(160, 21);
+            this.labelDashPatientName.Size = new System.Drawing.Size(120, 21);
             this.labelDashPatientName.TabIndex = 1;
-            this.labelDashPatientName.Text = "currentUserName";
+            this.labelDashPatientName.Text = "<FirstName>";
             // 
             // label1
             // 
@@ -423,9 +423,9 @@
             this.labelPatientTC.ForeColor = System.Drawing.Color.White;
             this.labelPatientTC.Location = new System.Drawing.Point(158, 119);
             this.labelPatientTC.Name = "labelPatientTC";
-            this.labelPatientTC.Size = new System.Drawing.Size(140, 21);
+            this.labelPatientTC.Size = new System.Drawing.Size(50, 21);
             this.labelPatientTC.TabIndex = 9;
-            this.labelPatientTC.Text = "currentUserTC";
+            this.labelPatientTC.Text = "<ID>";
             // 
             // labelPatientSurname
             // 
@@ -433,9 +433,9 @@
             this.labelPatientSurname.ForeColor = System.Drawing.Color.White;
             this.labelPatientSurname.Location = new System.Drawing.Point(158, 89);
             this.labelPatientSurname.Name = "labelPatientSurname";
-            this.labelPatientSurname.Size = new System.Drawing.Size(190, 21);
+            this.labelPatientSurname.Size = new System.Drawing.Size(110, 21);
             this.labelPatientSurname.TabIndex = 8;
-            this.labelPatientSurname.Text = "currentUserSurname";
+            this.labelPatientSurname.Text = "<LastName>";
             // 
             // labelPatientName
             // 
@@ -443,9 +443,9 @@
             this.labelPatientName.ForeColor = System.Drawing.Color.White;
             this.labelPatientName.Location = new System.Drawing.Point(158, 59);
             this.labelPatientName.Name = "labelPatientName";
-            this.labelPatientName.Size = new System.Drawing.Size(160, 21);
+            this.labelPatientName.Size = new System.Drawing.Size(120, 21);
             this.labelPatientName.TabIndex = 7;
-            this.labelPatientName.Text = "currentUserName";
+            this.labelPatientName.Text = "<FirstName>";
             // 
             // label5
             // 
