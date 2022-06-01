@@ -47,22 +47,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormDoctor.cs">
+    <Compile Include="Forms\FormDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDoctor.Designer.cs">
+    <Compile Include="Forms\FormDoctor.Designer.cs">
       <DependentUpon>FormDoctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPatient.cs">
+    <Compile Include="Forms\FormPatient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPatient.Designer.cs">
+    <Compile Include="Forms\FormPatient.Designer.cs">
       <DependentUpon>FormPatient.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLoginRegister.cs">
+    <Compile Include="Forms\FormLoginRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLoginRegister.Designer.cs">
+    <Compile Include="Forms\FormLoginRegister.Designer.cs">
       <DependentUpon>FormLoginRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="HospitalDBDataSet.Designer.cs">
@@ -72,13 +72,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormDoctor.resx">
+    <EmbeddedResource Include="Forms\FormDoctor.resx">
       <DependentUpon>FormDoctor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLoginRegister.resx">
+    <EmbeddedResource Include="Forms\FormLoginRegister.resx">
       <DependentUpon>FormLoginRegister.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPatient.resx">
+    <EmbeddedResource Include="Forms\FormPatient.resx">
       <DependentUpon>FormPatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

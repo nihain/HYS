@@ -158,7 +158,7 @@
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(237, 9);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(59, 32);
+            this.label14.Size = new System.Drawing.Size(59, 31);
             this.label14.TabIndex = 2;
             this.label14.Text = "HYS";
             // 
@@ -231,7 +231,7 @@
             this.radioButtonFemale.ForeColor = System.Drawing.Color.White;
             this.radioButtonFemale.Location = new System.Drawing.Point(1339, 662);
             this.radioButtonFemale.Name = "radioButtonFemale";
-            this.radioButtonFemale.Size = new System.Drawing.Size(83, 28);
+            this.radioButtonFemale.Size = new System.Drawing.Size(85, 29);
             this.radioButtonFemale.TabIndex = 28;
             this.radioButtonFemale.TabStop = true;
             this.radioButtonFemale.Text = "Kadın";
@@ -244,7 +244,7 @@
             this.radioButtonMale.ForeColor = System.Drawing.Color.White;
             this.radioButtonMale.Location = new System.Drawing.Point(1250, 663);
             this.radioButtonMale.Name = "radioButtonMale";
-            this.radioButtonMale.Size = new System.Drawing.Size(83, 28);
+            this.radioButtonMale.Size = new System.Drawing.Size(85, 29);
             this.radioButtonMale.TabIndex = 27;
             this.radioButtonMale.TabStop = true;
             this.radioButtonMale.Text = "Erkek";
@@ -267,7 +267,7 @@
             this.labelAdminToMain.ForeColor = System.Drawing.Color.White;
             this.labelAdminToMain.Location = new System.Drawing.Point(925, 457);
             this.labelAdminToMain.Name = "labelAdminToMain";
-            this.labelAdminToMain.Size = new System.Drawing.Size(25, 28);
+            this.labelAdminToMain.Size = new System.Drawing.Size(25, 27);
             this.labelAdminToMain.TabIndex = 19;
             this.labelAdminToMain.Text = "^";
             this.labelAdminToMain.Click += new System.EventHandler(this.labelAdminToMain_Click);
@@ -279,7 +279,7 @@
             this.labelMainToAdmin.ForeColor = System.Drawing.Color.White;
             this.labelMainToAdmin.Location = new System.Drawing.Point(646, 260);
             this.labelMainToAdmin.Name = "labelMainToAdmin";
-            this.labelMainToAdmin.Size = new System.Drawing.Size(207, 28);
+            this.labelMainToAdmin.Size = new System.Drawing.Size(207, 27);
             this.labelMainToAdmin.TabIndex = 15;
             this.labelMainToAdmin.Text = "Yönetici Girişi";
             this.labelMainToAdmin.Click += new System.EventHandler(this.labelMainToAdmin_Click);
@@ -316,7 +316,7 @@
             this.label22.ForeColor = System.Drawing.Color.White;
             this.label22.Location = new System.Drawing.Point(654, 696);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(90, 28);
+            this.label22.Size = new System.Drawing.Size(90, 27);
             this.label22.TabIndex = 51;
             this.label22.Text = "Şifre:";
             // 
@@ -327,7 +327,7 @@
             this.label23.ForeColor = System.Drawing.Color.White;
             this.label23.Location = new System.Drawing.Point(550, 662);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(194, 28);
+            this.label23.Size = new System.Drawing.Size(194, 27);
             this.label23.TabIndex = 49;
             this.label23.Text = "Kullanıcı Adı:";
             // 
@@ -349,7 +349,7 @@
             this.labelPatientRegisterToLogin.ForeColor = System.Drawing.Color.White;
             this.labelPatientRegisterToLogin.Location = new System.Drawing.Point(1135, 831);
             this.labelPatientRegisterToLogin.Name = "labelPatientRegisterToLogin";
-            this.labelPatientRegisterToLogin.Size = new System.Drawing.Size(229, 20);
+            this.labelPatientRegisterToLogin.Size = new System.Drawing.Size(230, 21);
             this.labelPatientRegisterToLogin.TabIndex = 31;
             this.labelPatientRegisterToLogin.Text = "Zaten kayıtlı mısınız?";
             this.labelPatientRegisterToLogin.Click += new System.EventHandler(this.labelPatientRegisterToLogin_Click);
@@ -395,7 +395,7 @@
             this.label17.ForeColor = System.Drawing.Color.White;
             this.label17.Location = new System.Drawing.Point(1193, 560);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(51, 28);
+            this.label17.Size = new System.Drawing.Size(51, 27);
             this.label17.TabIndex = 43;
             this.label17.Text = "Ad:";
             // 
@@ -406,7 +406,7 @@
             this.label18.ForeColor = System.Drawing.Color.White;
             this.label18.Location = new System.Drawing.Point(1063, 628);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(181, 28);
+            this.label18.Size = new System.Drawing.Size(181, 27);
             this.label18.TabIndex = 41;
             this.label18.Text = "TC Kimlik No:";
             // 
@@ -417,7 +417,7 @@
             this.label19.ForeColor = System.Drawing.Color.White;
             this.label19.Location = new System.Drawing.Point(1154, 594);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(90, 28);
+            this.label19.Size = new System.Drawing.Size(90, 27);
             this.label19.TabIndex = 40;
             this.label19.Text = "Soyad:";
             // 
@@ -438,7 +438,7 @@
             this.label20.ForeColor = System.Drawing.Color.White;
             this.label20.Location = new System.Drawing.Point(1154, 696);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(90, 28);
+            this.label20.Size = new System.Drawing.Size(90, 27);
             this.label20.TabIndex = 38;
             this.label20.Text = "Şifre:";
             // 
@@ -461,7 +461,7 @@
             this.label21.ForeColor = System.Drawing.Color.White;
             this.label21.Location = new System.Drawing.Point(1115, 662);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(129, 28);
+            this.label21.Size = new System.Drawing.Size(129, 27);
             this.label21.TabIndex = 36;
             this.label21.Text = "Cinsiyet:";
             // 
@@ -483,7 +483,7 @@
             this.labelDocRegisterToLogin.ForeColor = System.Drawing.Color.White;
             this.labelDocRegisterToLogin.Location = new System.Drawing.Point(135, 831);
             this.labelDocRegisterToLogin.Name = "labelDocRegisterToLogin";
-            this.labelDocRegisterToLogin.Size = new System.Drawing.Size(229, 20);
+            this.labelDocRegisterToLogin.Size = new System.Drawing.Size(230, 21);
             this.labelDocRegisterToLogin.TabIndex = 12;
             this.labelDocRegisterToLogin.Text = "Zaten kayıtlı mısınız?";
             this.labelDocRegisterToLogin.Click += new System.EventHandler(this.labelDocRegisterToLogin_Click);
@@ -529,7 +529,7 @@
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(193, 560);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(51, 28);
+            this.label13.Size = new System.Drawing.Size(51, 27);
             this.label13.TabIndex = 30;
             this.label13.Text = "Ad:";
             // 
@@ -550,7 +550,7 @@
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(63, 628);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(181, 28);
+            this.label11.Size = new System.Drawing.Size(181, 27);
             this.label11.TabIndex = 28;
             this.label11.Text = "TC Kimlik No:";
             // 
@@ -561,7 +561,7 @@
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(154, 594);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(90, 28);
+            this.label12.Size = new System.Drawing.Size(90, 27);
             this.label12.TabIndex = 26;
             this.label12.Text = "Soyad:";
             // 
@@ -582,7 +582,7 @@
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(154, 696);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 28);
+            this.label9.Size = new System.Drawing.Size(90, 27);
             this.label9.TabIndex = 24;
             this.label9.Text = "Şifre:";
             // 
@@ -605,7 +605,7 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(154, 662);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 28);
+            this.label10.Size = new System.Drawing.Size(90, 27);
             this.label10.TabIndex = 22;
             this.label10.Text = "Branş:";
             // 
@@ -627,7 +627,7 @@
             this.labelPatientLoginToMain.ForeColor = System.Drawing.Color.White;
             this.labelPatientLoginToMain.Location = new System.Drawing.Point(1075, 7);
             this.labelPatientLoginToMain.Name = "labelPatientLoginToMain";
-            this.labelPatientLoginToMain.Size = new System.Drawing.Size(38, 28);
+            this.labelPatientLoginToMain.Size = new System.Drawing.Size(38, 27);
             this.labelPatientLoginToMain.TabIndex = 33;
             this.labelPatientLoginToMain.Text = "<<";
             this.labelPatientLoginToMain.Click += new System.EventHandler(this.labelPatientLoginToMain_Click);
@@ -639,7 +639,7 @@
             this.labelDocLoginToMain.ForeColor = System.Drawing.Color.White;
             this.labelDocLoginToMain.Location = new System.Drawing.Point(425, 7);
             this.labelDocLoginToMain.Name = "labelDocLoginToMain";
-            this.labelDocLoginToMain.Size = new System.Drawing.Size(38, 28);
+            this.labelDocLoginToMain.Size = new System.Drawing.Size(38, 27);
             this.labelDocLoginToMain.TabIndex = 32;
             this.labelDocLoginToMain.Text = ">>";
             this.labelDocLoginToMain.Click += new System.EventHandler(this.labelDocLoginToMain_Click);
@@ -651,7 +651,7 @@
             this.labelPatientLoginToRegister.ForeColor = System.Drawing.Color.White;
             this.labelPatientLoginToRegister.Location = new System.Drawing.Point(1136, 375);
             this.labelPatientLoginToRegister.Name = "labelPatientLoginToRegister";
-            this.labelPatientLoginToRegister.Size = new System.Drawing.Size(229, 20);
+            this.labelPatientLoginToRegister.Size = new System.Drawing.Size(230, 21);
             this.labelPatientLoginToRegister.TabIndex = 23;
             this.labelPatientLoginToRegister.Text = "Kayıtlı değil misiniz?";
             this.labelPatientLoginToRegister.Click += new System.EventHandler(this.labelPatientLoginToRegister_Click);
@@ -688,7 +688,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(1154, 190);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 28);
+            this.label7.Size = new System.Drawing.Size(90, 27);
             this.label7.TabIndex = 15;
             this.label7.Text = "Şifre:";
             // 
@@ -711,7 +711,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(1063, 156);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(181, 28);
+            this.label8.Size = new System.Drawing.Size(181, 27);
             this.label8.TabIndex = 13;
             this.label8.Text = "TC Kimlik No:";
             // 
@@ -733,7 +733,7 @@
             this.labelDocLoginToRegister.ForeColor = System.Drawing.Color.White;
             this.labelDocLoginToRegister.Location = new System.Drawing.Point(135, 375);
             this.labelDocLoginToRegister.Name = "labelDocLoginToRegister";
-            this.labelDocLoginToRegister.Size = new System.Drawing.Size(229, 20);
+            this.labelDocLoginToRegister.Size = new System.Drawing.Size(230, 21);
             this.labelDocLoginToRegister.TabIndex = 4;
             this.labelDocLoginToRegister.Text = "Kayıtlı değil misiniz?";
             this.labelDocLoginToRegister.Click += new System.EventHandler(this.labelDocLoginToRegister_Click);
@@ -770,7 +770,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(154, 190);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 28);
+            this.label4.Size = new System.Drawing.Size(90, 27);
             this.label4.TabIndex = 8;
             this.label4.Text = "Şifre:";
             // 
@@ -793,7 +793,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(63, 156);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 28);
+            this.label3.Size = new System.Drawing.Size(181, 27);
             this.label3.TabIndex = 6;
             this.label3.Text = "TC Kimlik No:";
             // 
@@ -815,7 +815,7 @@
             this.labelMainToPatientLogin.ForeColor = System.Drawing.Color.White;
             this.labelMainToPatientLogin.Location = new System.Drawing.Point(665, 220);
             this.labelMainToPatientLogin.Name = "labelMainToPatientLogin";
-            this.labelMainToPatientLogin.Size = new System.Drawing.Size(168, 28);
+            this.labelMainToPatientLogin.Size = new System.Drawing.Size(168, 27);
             this.labelMainToPatientLogin.TabIndex = 14;
             this.labelMainToPatientLogin.Text = "Hasta Girişi";
             this.labelMainToPatientLogin.Click += new System.EventHandler(this.labelMainToPatientLogin_Click);
@@ -827,7 +827,7 @@
             this.labelMainToDocLogin.ForeColor = System.Drawing.Color.White;
             this.labelMainToDocLogin.Location = new System.Drawing.Point(658, 180);
             this.labelMainToDocLogin.Name = "labelMainToDocLogin";
-            this.labelMainToDocLogin.Size = new System.Drawing.Size(181, 28);
+            this.labelMainToDocLogin.Size = new System.Drawing.Size(181, 27);
             this.labelMainToDocLogin.TabIndex = 13;
             this.labelMainToDocLogin.Text = "Doktor Girişi";
             this.labelMainToDocLogin.Click += new System.EventHandler(this.labelMainToDocLogin_Click);
@@ -835,11 +835,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("IBM Plex Mono Medm", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("IBM Plex Mono Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(547, 3);
+            this.label1.Location = new System.Drawing.Point(558, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(406, 35);
+            this.label1.Size = new System.Drawing.Size(383, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "Hastane Yönetim Sistemi";
             // 
@@ -895,7 +895,7 @@
             // 
             // FormLoginRegister
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(500, 500);
