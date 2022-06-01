@@ -31,7 +31,7 @@ namespace HospitalTracker
         /// <summary>
         /// Patient's email address
         /// </summary>
-        public string Mail { get; set; }
+        public string Email { get; set; }
 
         /// <summary>
         /// Patient's password.
