@@ -15,7 +15,6 @@ namespace HYS
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Initialize the database connections
-            
 
             Application.Run(new FormLoginRegister());
         }
