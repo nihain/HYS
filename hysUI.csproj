@@ -121,5 +121,11 @@
   <ItemGroup>
     <None Include="Resources\user.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="HospitalLibrary\HospitalLibrary.csproj">
+      <Project>{a69fcd2e-67fe-4cd6-a555-3c6123f22373}</Project>
+      <Name>HospitalLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

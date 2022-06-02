@@ -9,6 +9,11 @@ namespace HospitalLibrary
     public class AppointmentModel
     {
         /// <summary>
+        /// The unique identifier for the appointment.
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
         /// Patient's ID number.
         /// </summary>
         public string PatientID { get; set; }

@@ -9,6 +9,11 @@ namespace HospitalLibrary
     public class DoctorModel
     {
         /// <summary>
+        /// The unique identifier for the doctor.
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
         /// Doctor's first name.
         /// </summary>
         public string FirstName { get; set; }
@@ -26,7 +31,7 @@ namespace HospitalLibrary
         /// <summary>
         /// Doctor's ID number.
         /// </summary>
-        public string ID { get; set; }
+        public string TCid { get; set; }
 
         /// <summary>
         /// Doctor's branch.

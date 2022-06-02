@@ -9,6 +9,11 @@ namespace HospitalLibrary
     public class PatientModel
     {
         /// <summary>
+        /// The unique identifier for the patient.
+        /// </summary>
+        public int Id { get; set; }
+
+        /// <summary>
         /// Patient's first name.
         /// </summary>
         public string FirstName { get; set; }
@@ -26,7 +31,7 @@ namespace HospitalLibrary
         /// <summary>
         /// Patient's ID number.
         /// </summary>
-        public string ID { get; set; }
+        public string TCid { get; set; }
 
         /// <summary>
         /// Patient's email address

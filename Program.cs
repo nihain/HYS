@@ -13,6 +13,10 @@ namespace HYS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            // Initialize the database connections
+            
+
             Application.Run(new FormLoginRegister());
         }
     }
