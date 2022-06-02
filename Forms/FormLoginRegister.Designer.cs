@@ -334,11 +334,11 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("IBM Plex Mono Medm", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Font = new System.Drawing.Font("IBM Plex Mono Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(623, 453);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(253, 35);
+            this.label16.Size = new System.Drawing.Size(239, 35);
             this.label16.TabIndex = 48;
             this.label16.Text = "Yönetici Giriş";
             // 
@@ -468,11 +468,11 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("IBM Plex Mono Medm", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("IBM Plex Mono Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(1149, 453);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(202, 35);
+            this.label15.Size = new System.Drawing.Size(191, 35);
             this.label15.TabIndex = 35;
             this.label15.Text = "Hasta Kayıt";
             // 
@@ -612,11 +612,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("IBM Plex Mono Medm", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("IBM Plex Mono Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(135, 453);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(219, 35);
+            this.label6.Size = new System.Drawing.Size(207, 35);
             this.label6.TabIndex = 21;
             this.label6.Text = "Doktor Kayıt";
             // 
@@ -718,11 +718,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("IBM Plex Mono Medm", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("IBM Plex Mono Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(1149, 3);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(202, 35);
+            this.label5.Size = new System.Drawing.Size(191, 35);
             this.label5.TabIndex = 12;
             this.label5.Text = "Hasta Giriş";
             // 
@@ -800,11 +800,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("IBM Plex Mono Medm", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("IBM Plex Mono Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(135, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(219, 35);
+            this.label2.Size = new System.Drawing.Size(207, 35);
             this.label2.TabIndex = 3;
             this.label2.Text = "Doktor Giriş";
             // 
