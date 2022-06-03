@@ -4,28 +4,7 @@
     <projectFile>hysUI.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18a1202f-9cbc-4d0d-98fb-90a98b7f66c3" name="Changes" comment="implement doctor registration">
-      <change afterPath="$PROJECT_DIR$/HospitalLibrary/DataConnections/IDataConnection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HospitalLibrary/DataConnections/SqlConnection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HospitalLibrary/DataConnections/TextConnection.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HospitalLibrary/GlobalConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HospitalLibrary/Models/AppointmentModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HospitalLibrary/Models/DoctorModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HospitalLibrary/Models/PatientModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HospitalLibrary/packages.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HYS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HYS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/App.config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forms/FormDoctor.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormDoctor.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forms/FormDoctor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormDoctor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forms/FormLoginRegister.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormLoginRegister.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forms/FormLoginRegister.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormLoginRegister.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forms/FormPatient.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormPatient.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forms/FormPatient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormPatient.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forms/FormPatient.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormPatient.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HYS.sln" beforeDir="false" afterPath="$PROJECT_DIR$/HYS.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hysUI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/hysUI.csproj" afterDir="false" />
-    </list>
+    <list default="true" id="18a1202f-9cbc-4d0d-98fb-90a98b7f66c3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,8 +58,16 @@
       <updated>1654254479249</updated>
       <workItem from="1654254487187" duration="2430000" />
       <workItem from="1654257341566" duration="6856000" />
-      <workItem from="1654267513009" duration="312000" />
+      <workItem from="1654267513009" duration="382000" />
     </task>
+    <task id="LOCAL-00001" summary="implement doctor registration">
+      <created>1654267884253</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1654267884253</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
