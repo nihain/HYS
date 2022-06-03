@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HospitalLibrary.DataConnections;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,18 +11,18 @@ namespace HospitalLibrary
     {
         public static List<IDataConnection> Connections { get; private set; } = new List<IDataConnection>();
 
-        public static void InitializeConnections(bool database, bool textFiles)
+        public static void InitializeConnections(bool database, bool textFile)
         {
             if (database)
             {
                 // TODO: Set up the SQL Connector properly
-                SQLConnector sql = new SQLConnector();
+                SqlConnection sql = new SqlConnection();
                 Connections.Add(sql);
             }
-            if (textFiles)
+            if (textFile)
             {
                 // TODO: Create text file connection
-                TextConnector text = new TextConnector();
+                TextConnection text = new TextConnection();
                 Connections.Add(text);
             }
         }

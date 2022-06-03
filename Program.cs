@@ -16,6 +16,7 @@ namespace HYS
             Application.SetCompatibleTextRenderingDefault(false);
 
             // Initialize the database connections
+            HospitalLibrary.GlobalConfig.InitializeConnections(true, true);
 
             Application.Run(new FormLoginRegister());
         }

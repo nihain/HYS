@@ -20,6 +20,7 @@
     <None Update="HospitalDBDataSet.xss">
       <DependentUpon>HospitalDBDataSet.xsd</DependentUpon>
     </None>
+    <None Remove="HospitalLibrary\**" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
@@ -42,8 +43,15 @@
     <Compile Remove="HospitalLibrary\PatientModel.cs" />
     <Compile Remove="HospitalLibrary\SQLConnector.cs" />
     <Compile Remove="HospitalLibrary\TextConnector.cs" />
+    <Compile Remove="HospitalLibrary\**" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="appsettings.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="HospitalLibrary\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="HospitalLibrary\HospitalLibrary.csproj" />
   </ItemGroup>
 </Project>

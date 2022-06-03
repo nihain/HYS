@@ -1,10 +1,11 @@
-﻿using System;
+﻿using HospitalLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalLibrary
+namespace HospitalLibrary.DataConnections
 {
     public interface IDataConnection
     {

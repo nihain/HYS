@@ -3,6 +3,10 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Linq;
+using HospitalLibrary;
+using SqlConnection = System.Data.SqlClient.SqlConnection;
+using HospitalLibrary.Models;
+using HospitalLibrary.DataConnections;
 
 namespace HYS
 {
@@ -13,9 +17,11 @@ namespace HYS
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection("Data Source = MATEBOOK\\SQLEXPRESS; Initial Catalog = HospitalDB; Integrated Security = True");
+        readonly SqlConnection conn = new SqlConnection("Data Source = MATEBOOK\\SQLEXPRESS; Initial Catalog = HospitalDB; Integrated Security = True");
 
-        // disable animation triggers
+        /// <summary>
+        /// Disable animation triggers.
+        /// </summary>
         void DisableLabels()
         {
             labelMainToDocLogin.Enabled = false;
@@ -30,7 +36,9 @@ namespace HYS
             labelAdminToMain.Enabled = false;
         }
 
-        // enable animation triggers
+        /// <summary>
+        /// Enable animation triggers.
+        /// </summary>
         void EnableLabels()
         {
             labelMainToDocLogin.Enabled = true;
@@ -45,6 +53,9 @@ namespace HYS
             labelAdminToMain.Enabled = true;
         }
 
+        /// <summary>
+        /// Clear Textboxes and MaskedTextBoxes. This method also unchecks RadioButtons.
+        /// </summary>
         void ClearText()
         {
             foreach (TextBox text in this.panelMenu.Controls.OfType<TextBox>())
@@ -65,24 +76,30 @@ namespace HYS
             }
         }
 
+        /// <summary>
+        /// Reset form to initial state.
+        /// </summary>
         void ResetForm()
         {
             panelMenu.Location = new Point(-500, 50);
             ClearText();
         }
 
+        // Animation trigger.
         private void labelMainToDocLogin_Click(object sender, EventArgs e)
         {
             DisableLabels();
             timerMainToDocLogin.Start();
         }
 
+        // Animation trigger.
         private void labelMainToPatientLogin_Click(object sender, EventArgs e)
         {
             DisableLabels();
             timerMainToPatientLogin.Start();
         }
 
+        // Animation.
         private void timerMainToDocLogin_Tick(object sender, EventArgs e)
         {
             if (panelMenu.Location.X < 0)
@@ -98,6 +115,7 @@ namespace HYS
             }
         }
 
+        // Animation.
         private void timerDocLoginToMain_Tick(object sender, EventArgs e)
         {
             if (panelMenu.Location.X > -500)
@@ -113,12 +131,14 @@ namespace HYS
             }
         }
 
+        // Animation trigger.
         private void labelDocLoginToMain_Click(object sender, EventArgs e)
         {
             DisableLabels();
             timerDocLoginToMain.Start();
         }
 
+        // Animation.
         private void timerMainToPatientLogin_Tick(object sender, EventArgs e)
         {
             if (panelMenu.Location.X > -1000)
@@ -134,12 +154,14 @@ namespace HYS
             }
         }
 
+        // Animation trigger.
         private void labelPatientLoginToMain_Click(object sender, EventArgs e)
         {
             DisableLabels();
             timerPatientLoginToMain.Start();
         }
 
+        // Animation.
         private void timerPatientLoginToMain_Tick(object sender, EventArgs e)
         {
             if (panelMenu.Location.X < -500)
@@ -155,18 +177,21 @@ namespace HYS
             }
         }
 
+        // Animation trigger.
         private void labelDocRegisterToLogin_Click(object sender, EventArgs e)
         {
             DisableLabels();
             timerDocRegisterToLogin.Start();
         }
 
+        // Animation trigger.
         private void labelDocLoginToRegister_Click(object sender, EventArgs e)
         {
             DisableLabels();
             timerDocLoginToRegister.Start();
         }
 
+        // Animation.
         private void timerDocLoginToRegister_Tick(object sender, EventArgs e)
         {
             if (panelMenu.Location.Y > -400)
@@ -182,6 +207,7 @@ namespace HYS
             }
         }
 
+        // Animation.
         private void timerDocRegisterToLogin_Tick(object sender, EventArgs e)
         {
             if (panelMenu.Location.Y < 50)
@@ -197,18 +223,21 @@ namespace HYS
             }
         }
 
+        // Animation trigger.
         private void labelPatientRegisterToLogin_Click(object sender, EventArgs e)
         {
             DisableLabels();
             timerPatientRegisterToLogin.Start();
         }
 
+        // Animation trigger.
         private void labelPatientLoginToRegister_Click(object sender, EventArgs e)
         {
             DisableLabels();
             timerPatientLoginToRegister.Start();
         }
 
+        // Animation.
         private void timerPatientLoginToRegister_Tick(object sender, EventArgs e)
         {
             if (panelMenu.Location.Y > -400)
@@ -224,6 +253,7 @@ namespace HYS
             }
         }
 
+        // Animation.
         private void timerPatientRegisterToLogin_Tick(object sender, EventArgs e)
         {
             if (panelMenu.Location.Y < 50)
@@ -239,18 +269,21 @@ namespace HYS
             }
         }
 
+        // Animation trigger.
         private void labelMainToAdmin_Click(object sender, EventArgs e)
         {
             DisableLabels();
             timerMainToAdmin.Start();
         }
 
+        // Animation trigger.
         private void labelAdminToMain_Click(object sender, EventArgs e)
         {
             DisableLabels();
             timerAdminToMain.Start();
         }
 
+        // Animation.
         private void timerMainToAdmin_Tick(object sender, EventArgs e)
         {
             if (panelMenu.Location.Y > -400)
@@ -266,6 +299,7 @@ namespace HYS
             }
         }
 
+        // Animation.
         private void timerAdminToMain_Tick(object sender, EventArgs e)
         {
             if (panelMenu.Location.Y < 50)
@@ -281,16 +315,19 @@ namespace HYS
             }
         }
 
+        // Custom exit button.
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Application.Exit();
+            Application.Exit();
         }
 
+        // Custom minimize button.
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
 
+        // TODO: Move admin login to database
         private void buttonAdminLogin_Click(object sender, EventArgs e)
         {
             if (textBoxAdminUsername.Text == "admin" && textBoxAdminPassword.Text == "admin")
@@ -301,13 +338,47 @@ namespace HYS
 
         private void buttonDoctorRegister_Click(object sender, EventArgs e)
         {
+            // Reset textBox and maskedTextBox colors
             textBoxDoctorRegisterName.BackColor = Color.FromArgb(255, 25, 28, 33);
             textBoxDoctorRegisterSurname.BackColor = Color.FromArgb(255, 25, 28, 33);
             textBoxDoctorRegisterBranch.BackColor = Color.FromArgb(255, 25, 28, 33);
             maskedTextBoxDoctorRegisterTC.BackColor = Color.FromArgb(255, 25, 28, 33);
             textBoxDoctorRegisterPassword.BackColor = Color.FromArgb(255, 25, 28, 33);
 
-            if (textBoxDoctorRegisterName.Text == String.Empty || textBoxDoctorRegisterSurname.Text == String.Empty || textBoxDoctorRegisterBranch.Text == String.Empty || maskedTextBoxDoctorRegisterTC.Text == String.Empty || textBoxDoctorRegisterPassword.Text == String.Empty)
+            // Check registration info
+            bool isValid = textBoxDoctorRegisterName.Text.Length != 0;
+            if (textBoxDoctorRegisterSurname.Text.Length == 0)
+            {
+                isValid = false;
+            }
+            if (maskedTextBoxDoctorRegisterTC.Text.Length != 11)
+            {
+                isValid = false;
+            }
+            if (textBoxDoctorRegisterBranch.Text.Length == 0)
+            {
+                isValid = false;
+            }
+            if (textBoxDoctorRegisterPassword.Text.Length == 0)
+            {
+                isValid = false;
+            }
+
+            if (isValid)
+            {
+                DoctorModel model = new DoctorModel(
+                    textBoxDoctorRegisterName.Text,
+                    textBoxDoctorRegisterSurname.Text,
+                    maskedTextBoxDoctorRegisterTC.Text,
+                    textBoxDoctorRegisterBranch.Text,
+                    textBoxDoctorRegisterPassword.Text);
+
+                foreach (IDataConnection dataConnection in GlobalConfig.Connections)
+                {
+                    dataConnection.CreateDoctor(model);
+                }
+            }
+            else
             {
                 textBoxDoctorRegisterName.BackColor = Color.Red;
                 textBoxDoctorRegisterSurname.BackColor = Color.Red;
@@ -317,41 +388,22 @@ namespace HYS
 
                 MessageBox.Show("Herhangi bir alan boş bırakılamaz.");
             }
-            else
-            {
-                conn.Open();
-
-                SqlCommand cmd = new SqlCommand("insert into TableDoctors (DoctorName, DoctorSurname, DoctorBranch, DoctorTC, DoctorPassword) values (@name, @surname, @branch, @tc, @password)", conn);
-
-                cmd.Parameters.AddWithValue("@name", textBoxDoctorRegisterName.Text);
-                cmd.Parameters.AddWithValue("@surname", textBoxDoctorRegisterSurname.Text);
-                cmd.Parameters.AddWithValue("@branch", textBoxDoctorRegisterBranch.Text);
-                cmd.Parameters.AddWithValue("@tc", maskedTextBoxDoctorRegisterTC.Text);
-                cmd.Parameters.AddWithValue("@password", textBoxDoctorRegisterPassword.Text);
-
-                cmd.ExecuteNonQuery();
-
-                conn.Close();
-
-                ClearText();
-
-                MessageBox.Show("Kayıt başarılı.");
-            }
         }
 
         private void buttonPatientRegister_Click(object sender, EventArgs e)
         {
+            // Reset textBox and maskedTextBox colors
             textBoxPatientRegisterName.BackColor = Color.FromArgb(255, 25, 28, 33);
             textBoxPatientRegisterSurname.BackColor = Color.FromArgb(255, 25, 28, 33);
             maskedTextBoxPatientRegisterTC.BackColor = Color.FromArgb(255, 25, 28, 33);
             textBoxPatientRegisterPassword.BackColor = Color.FromArgb(255, 25, 28, 33);
 
             bool? isMale;
-            if (radioButtonMale.Checked == true)
+            if (radioButtonMale.Checked)
             {
                 isMale = true;
             }
-            else if (radioButtonFemale.Checked == true)
+            else if (radioButtonFemale.Checked)
             {
                 isMale = false;
             }
@@ -360,7 +412,30 @@ namespace HYS
                 isMale = null;
             }
 
-            if (textBoxPatientRegisterName.Text == String.Empty || textBoxPatientRegisterSurname.Text == String.Empty || maskedTextBoxPatientRegisterTC.Text == String.Empty || textBoxPatientRegisterPassword.Text == String.Empty || (radioButtonFemale.Checked == false && radioButtonMale.Checked == false))
+            // Check registration info
+            bool isValid = textBoxPatientRegisterName.Text.Length != 0;
+            if (textBoxPatientRegisterSurname.Text.Length == 0)
+            {
+                isValid = false;
+            }
+            if (maskedTextBoxPatientRegisterTC.Text.Length != 11)
+            {
+                isValid = false;
+            }
+            if (isMale == null)
+            {
+                isValid = false;
+            }
+            if (textBoxPatientRegisterPassword.Text.Length == 0)
+            {
+                isValid = false;
+            }
+
+            if (isValid)
+            {
+                // TODO: Create a patient profile.
+            }
+            else
             {
                 textBoxPatientRegisterName.BackColor = Color.Red;
                 textBoxPatientRegisterSurname.BackColor = Color.Red;
@@ -368,26 +443,6 @@ namespace HYS
                 textBoxPatientRegisterPassword.BackColor = Color.Red;
 
                 MessageBox.Show("Herhangi bir alan boş bırakılamaz.");
-            }
-            else
-            {
-                conn.Open();
-
-                SqlCommand cmd = new SqlCommand("insert into TablePatients (PatientName, PatientSurname, PatientTC, PatientGender,PatientPassword) values (@name, @surname, @tc, @gender, @password)", conn);
-
-                cmd.Parameters.AddWithValue("@name", textBoxPatientRegisterName.Text);
-                cmd.Parameters.AddWithValue("@surname", textBoxPatientRegisterSurname.Text);
-                cmd.Parameters.AddWithValue("@tc", maskedTextBoxPatientRegisterTC.Text);
-                cmd.Parameters.AddWithValue("@gender", isMale);
-                cmd.Parameters.AddWithValue("@password", textBoxPatientRegisterPassword.Text);
-
-                cmd.ExecuteNonQuery();
-
-                conn.Close();
-
-                ClearText();
-
-                MessageBox.Show("Kayıt başarılı.");
             }
         }
 

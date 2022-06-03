@@ -4,47 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalLibrary
+namespace HospitalLibrary.Models
 {
-    public class DoctorModel
+    public class PatientModel
     {
         /// <summary>
-        /// The unique identifier for the doctor.
+        /// The unique identifier for the patient.
         /// </summary>
         public int Id { get; set; }
 
         /// <summary>
-        /// Doctor's first name.
+        /// Patient's first name.
         /// </summary>
         public string FirstName { get; set; }
 
         /// <summary>
-        /// Doctor's surname.
+        /// Patient's surname.
         /// </summary>
         public string LastName { get; set; }
 
         /// <summary>
-        /// Doctor's gender.
+        /// Patient's gender.
         /// </summary>
         public bool Gender { get; set; }
 
         /// <summary>
-        /// Doctor's ID number.
+        /// Patient's ID number.
         /// </summary>
         public string TCid { get; set; }
 
         /// <summary>
-        /// Doctor's branch.
-        /// </summary>
-        public string Branch { get; set; }
-
-        /// <summary>
-        /// Doctor's email address.
+        /// Patient's email address
         /// </summary>
         public string Email { get; set; }
 
         /// <summary>
-        /// Doctor's password.
+        /// Patient's password.
         /// </summary>
         public string Password { get; set; }
     }
