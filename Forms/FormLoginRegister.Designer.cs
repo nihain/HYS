@@ -122,7 +122,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(402, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(402, 6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(40, 40);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -133,7 +133,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(448, 4);
+            this.pictureBox3.Location = new System.Drawing.Point(448, 6);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 40);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -227,6 +227,7 @@
             // radioButtonFemale
             // 
             this.radioButtonFemale.AutoSize = true;
+            this.radioButtonFemale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
             this.radioButtonFemale.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonFemale.ForeColor = System.Drawing.Color.White;
             this.radioButtonFemale.Location = new System.Drawing.Point(1339, 662);
@@ -235,20 +236,21 @@
             this.radioButtonFemale.TabIndex = 28;
             this.radioButtonFemale.TabStop = true;
             this.radioButtonFemale.Text = "Kadın";
-            this.radioButtonFemale.UseVisualStyleBackColor = true;
+            this.radioButtonFemale.UseVisualStyleBackColor = false;
             // 
             // radioButtonMale
             // 
             this.radioButtonMale.AutoSize = true;
+            this.radioButtonMale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
             this.radioButtonMale.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButtonMale.ForeColor = System.Drawing.Color.White;
-            this.radioButtonMale.Location = new System.Drawing.Point(1250, 663);
+            this.radioButtonMale.Location = new System.Drawing.Point(1250, 662);
             this.radioButtonMale.Name = "radioButtonMale";
             this.radioButtonMale.Size = new System.Drawing.Size(85, 29);
             this.radioButtonMale.TabIndex = 27;
             this.radioButtonMale.TabStop = true;
             this.radioButtonMale.Text = "Erkek";
-            this.radioButtonMale.UseVisualStyleBackColor = true;
+            this.radioButtonMale.UseVisualStyleBackColor = false;
             // 
             // textBoxAdminUsername
             // 

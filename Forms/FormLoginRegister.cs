@@ -64,6 +64,7 @@ namespace HYS.Forms
             foreach (RadioButton radio in this.panelMenu.Controls.OfType<RadioButton>())
             {
                 radio.Checked = false;
+                radio.BackColor = Color.FromArgb(255, 25, 28, 33);
             }
 
             foreach (MaskedTextBox maskedText in this.panelMenu.Controls.OfType<MaskedTextBox>())
