@@ -9,9 +9,8 @@ namespace HYS.Forms
         {
             InitializeComponent();
         }
-
-        public string doctorTC;
-        public Form previousForm;
+        
+        public Form PreviousForm;
 
         private void FormDoctor_Load(object sender, EventArgs e)
         {
@@ -25,7 +24,7 @@ namespace HYS.Forms
 
         private void FormDoctor_FormClosed(object sender, FormClosedEventArgs e)
         {
-            previousForm.Show();
+            PreviousForm.Show();
         }
     }
 }

@@ -4,7 +4,18 @@
     <projectFile>hysUI.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18a1202f-9cbc-4d0d-98fb-90a98b7f66c3" name="Changes" comment="" />
+    <list default="true" id="18a1202f-9cbc-4d0d-98fb-90a98b7f66c3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HYS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HYS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Forms/FormDoctor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormDoctor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Forms/FormLoginRegister.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormLoginRegister.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalLibrary/DataConnections/IDataConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalLibrary/DataConnections/IDataConnection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalLibrary/DataConnections/SqlConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalLibrary/DataConnections/SqlConnection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalLibrary/DataConnections/TextConnection.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalLibrary/GlobalConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalLibrary/GlobalConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalLibrary/HospitalLibrary.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalLibrary/HospitalLibrary.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalLibrary/Models/PatientModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalLibrary/Models/PatientModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +70,7 @@
       <workItem from="1654254487187" duration="2430000" />
       <workItem from="1654257341566" duration="6856000" />
       <workItem from="1654267513009" duration="382000" />
+      <workItem from="1654275562103" duration="2219000" />
     </task>
     <task id="LOCAL-00001" summary="implement doctor registration">
       <created>1654267884253</created>

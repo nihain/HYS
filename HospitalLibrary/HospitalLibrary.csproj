@@ -47,7 +47,6 @@
   <ItemGroup>
     <Compile Include="DataConnections\IDataConnection.cs" />
     <Compile Include="DataConnections\SqlConnection.cs" />
-    <Compile Include="DataConnections\TextConnection.cs" />
     <Compile Include="GlobalConfig.cs" />
     <Compile Include="Models\AppointmentModel.cs" />
     <Compile Include="Models\DoctorModel.cs" />

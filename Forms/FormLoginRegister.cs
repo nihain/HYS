@@ -3,7 +3,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using HospitalLibrary;
-using HospitalLibrary.DataConnections;
 using HospitalLibrary.Models;
 
 namespace HYS.Forms
@@ -379,10 +378,7 @@ namespace HYS.Forms
                     textBoxDoctorRegisterBranch.Text,
                     textBoxDoctorRegisterPassword.Text);
 
-                foreach (IDataConnection dataConnection in GlobalConfig.Connections)
-                {
-                    dataConnection.CreateDoctorProfile(model);
-                }
+                GlobalConfig.Connection.CreateDoctorProfile(model);
 
                 ClearText();
                 MessageBox.Show("Kayıt başarılı!");
@@ -448,7 +444,17 @@ namespace HYS.Forms
 
             if (isValid)
             {
-                //TODO: Add profile
+                PatientModel model = new PatientModel(
+                    textBoxPatientRegisterName.Text,
+                    textBoxPatientRegisterSurname.Text,
+                    maskedTextBoxPatientRegisterTC.Text,
+                    isMale,
+                    textBoxPatientRegisterPassword.Text);
+
+                GlobalConfig.Connection.CreatePatientProfile(model);
+
+                ClearText();
+                MessageBox.Show("Kayıt başarılı!");
             }
             else
             {
@@ -467,7 +473,7 @@ namespace HYS.Forms
         private void buttonDoctorLogin_Click(object sender, EventArgs e)
         {
             FormDoctor formDoctor = new FormDoctor();
-            formDoctor.previousForm = this;
+            formDoctor.PreviousForm = this;
             formDoctor.Show();
             Hide();
             ResetForm();

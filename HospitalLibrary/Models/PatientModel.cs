@@ -25,7 +25,7 @@
         /// <summary>
         /// Patient's gender.
         /// </summary>
-        public bool Gender { get; set; }
+        public bool? Gender { get; set; }
         
         /// <summary>
         /// Patient's password.
@@ -37,7 +37,7 @@
             
         }
 
-        public PatientModel(string name, string surname, string tcId, bool gender, string password)
+        public PatientModel(string name, string surname, string tcId, bool? gender, string password)
         {
             Name = name;
             Surname = surname;
