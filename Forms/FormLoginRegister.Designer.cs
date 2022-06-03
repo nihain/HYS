@@ -1,4 +1,4 @@
-﻿namespace HYS
+﻿namespace HYS.Forms
 {
     partial class FormLoginRegister
     {

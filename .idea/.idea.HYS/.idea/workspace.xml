@@ -4,28 +4,26 @@
     <projectFile>hysUI.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18a1202f-9cbc-4d0d-98fb-90a98b7f66c3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HYS/.idea/.gitignore" beforeDir="false" />
+    <list default="true" id="18a1202f-9cbc-4d0d-98fb-90a98b7f66c3" name="Changes" comment="implement doctor registration">
+      <change afterPath="$PROJECT_DIR$/HospitalLibrary/DataConnections/IDataConnection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalLibrary/DataConnections/SqlConnection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalLibrary/DataConnections/TextConnection.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalLibrary/GlobalConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalLibrary/Models/AppointmentModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalLibrary/Models/DoctorModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalLibrary/Models/PatientModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HospitalLibrary/packages.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HYS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HYS/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.config" beforeDir="false" afterPath="$PROJECT_DIR$/App.config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Forms/FormDoctor.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormDoctor.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Forms/FormDoctor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormDoctor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Forms/FormLoginRegister.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormLoginRegister.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Forms/FormLoginRegister.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormLoginRegister.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forms/FormLoginRegister.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormLoginRegister.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Forms/FormPatient.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormPatient.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Forms/FormPatient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormPatient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Forms/FormPatient.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormPatient.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HYS.sln" beforeDir="false" afterPath="$PROJECT_DIR$/HYS.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalDBDataSet.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalDBDataSet.xsc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalDBDataSet.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalDBDataSet.xss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalLibrary/DataConnections/IDataConnection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalLibrary/DataConnections/SqlConnection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalLibrary/DataConnections/TextConnection.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalLibrary/GlobalConfig.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalLibrary/HospitalLibrary.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalLibrary/Models/AppointmentModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalLibrary/Models/DoctorModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalLibrary/Models/HospitalModel.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalLibrary/Models/PatientModel.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hysUI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/hysUI.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,15 +40,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.spelling",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.spelling&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="hysUI" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -80,6 +78,8 @@
       <option name="presentableId" value="Default" />
       <updated>1654254479249</updated>
       <workItem from="1654254487187" duration="2430000" />
+      <workItem from="1654257341566" duration="6856000" />
+      <workItem from="1654267513009" duration="312000" />
     </task>
     <servers />
   </component>
@@ -88,8 +88,21 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="implement doctor registration" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement doctor registration" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

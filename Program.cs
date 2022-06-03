@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using HYS.Forms;
 
 namespace HYS
 {
@@ -14,7 +15,8 @@ namespace HYS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Initialize the database connections
+            // Initialize the database connections.
+            HospitalLibrary.GlobalConfig.InitializeConnections(true, true);
 
             Application.Run(new FormLoginRegister());
         }

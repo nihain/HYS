@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Drawing;
-using System.Windows.Forms;
 using System.Linq;
+using System.Windows.Forms;
+using HospitalLibrary;
+using HospitalLibrary.DataConnections;
+using HospitalLibrary.Models;
 
-namespace HYS
+namespace HYS.Forms
 {
     public partial class FormLoginRegister : Form
     {
@@ -11,6 +14,8 @@ namespace HYS
         {
             InitializeComponent();
         }
+        
+        //TODO: Change radiobutton color
         
         /// <summary>
         /// Disable animation triggers.
@@ -367,7 +372,20 @@ namespace HYS
 
             if (isValid)
             {
-                //TODO: Add profile
+                DoctorModel model = new DoctorModel(
+                    textBoxDoctorRegisterName.Text,
+                    textBoxDoctorRegisterSurname.Text,
+                    maskedTextBoxDoctorRegisterTC.Text,
+                    textBoxDoctorRegisterBranch.Text,
+                    textBoxDoctorRegisterPassword.Text);
+
+                foreach (IDataConnection dataConnection in GlobalConfig.Connections)
+                {
+                    dataConnection.CreateDoctorProfile(model);
+                }
+
+                ClearText();
+                MessageBox.Show("Kayıt başarılı!");
             }
             else
             {
@@ -386,11 +404,11 @@ namespace HYS
             radioButtonFemale.BackColor = Color.FromArgb(255, 25, 28, 33);
 
             bool? isMale;
-            if (radioButtonMale.Checked == true)
+            if (radioButtonMale.Checked)
             {
                 isMale = true;
             }
-            else if (radioButtonFemale.Checked == true)
+            else if (radioButtonFemale.Checked)
             {
                 isMale = false;
             }
