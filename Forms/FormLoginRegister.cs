@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Linq;
-using HospitalLibrary;
-using SqlConnection = System.Data.SqlClient.SqlConnection;
-using HospitalLibrary.Models;
-using HospitalLibrary.DataConnections;
 
 namespace HYS
 {
@@ -16,9 +11,7 @@ namespace HYS
         {
             InitializeComponent();
         }
-
-        readonly SqlConnection conn = new SqlConnection("Data Source = MATEBOOK\\SQLEXPRESS; Initial Catalog = HospitalDB; Integrated Security = True");
-
+        
         /// <summary>
         /// Disable animation triggers.
         /// </summary>
@@ -54,7 +47,7 @@ namespace HYS
         }
 
         /// <summary>
-        /// Clear Textboxes and MaskedTextBoxes. This method also unchecks RadioButtons.
+        /// Clear all textBoxes, maskedTextBoxes and uncheck radioButtons.
         /// </summary>
         void ClearText()
         {
@@ -77,7 +70,7 @@ namespace HYS
         }
 
         /// <summary>
-        /// Reset form to initial state.
+        /// Reset the menu to initial position.
         /// </summary>
         void ResetForm()
         {
@@ -115,7 +108,7 @@ namespace HYS
             }
         }
 
-        // Animation.
+        // Animation
         private void timerDocLoginToMain_Tick(object sender, EventArgs e)
         {
             if (panelMenu.Location.X > -500)
@@ -253,7 +246,7 @@ namespace HYS
             }
         }
 
-        // Animation.
+        // Animation
         private void timerPatientRegisterToLogin_Tick(object sender, EventArgs e)
         {
             if (panelMenu.Location.Y < 50)
@@ -327,7 +320,6 @@ namespace HYS
             WindowState = FormWindowState.Minimized;
         }
 
-        // TODO: Move admin login to database
         private void buttonAdminLogin_Click(object sender, EventArgs e)
         {
             if (textBoxAdminUsername.Text == "admin" && textBoxAdminPassword.Text == "admin")
@@ -338,72 +330,67 @@ namespace HYS
 
         private void buttonDoctorRegister_Click(object sender, EventArgs e)
         {
-            // Reset textBox and maskedTextBox colors
+            // Reset input field colors.
             textBoxDoctorRegisterName.BackColor = Color.FromArgb(255, 25, 28, 33);
             textBoxDoctorRegisterSurname.BackColor = Color.FromArgb(255, 25, 28, 33);
             textBoxDoctorRegisterBranch.BackColor = Color.FromArgb(255, 25, 28, 33);
             maskedTextBoxDoctorRegisterTC.BackColor = Color.FromArgb(255, 25, 28, 33);
             textBoxDoctorRegisterPassword.BackColor = Color.FromArgb(255, 25, 28, 33);
 
-            // Check registration info
-            bool isValid = textBoxDoctorRegisterName.Text.Length != 0;
+            // Check the validity of the input.
+            bool isValid = true;
+            if (textBoxDoctorRegisterName.Text.Length == 0)
+            {
+                isValid = false;
+                textBoxDoctorRegisterName.BackColor = Color.Red;
+            }
             if (textBoxDoctorRegisterSurname.Text.Length == 0)
             {
                 isValid = false;
+                textBoxDoctorRegisterSurname.BackColor = Color.Red;
             }
             if (maskedTextBoxDoctorRegisterTC.Text.Length != 11)
             {
                 isValid = false;
+                maskedTextBoxDoctorRegisterTC.BackColor = Color.Red;
             }
             if (textBoxDoctorRegisterBranch.Text.Length == 0)
             {
                 isValid = false;
+                textBoxDoctorRegisterBranch.BackColor = Color.Red;
             }
             if (textBoxDoctorRegisterPassword.Text.Length == 0)
             {
                 isValid = false;
+                textBoxDoctorRegisterPassword.BackColor = Color.Red;
             }
 
             if (isValid)
             {
-                DoctorModel model = new DoctorModel(
-                    textBoxDoctorRegisterName.Text,
-                    textBoxDoctorRegisterSurname.Text,
-                    maskedTextBoxDoctorRegisterTC.Text,
-                    textBoxDoctorRegisterBranch.Text,
-                    textBoxDoctorRegisterPassword.Text);
-
-                foreach (IDataConnection dataConnection in GlobalConfig.Connections)
-                {
-                    dataConnection.CreateDoctor(model);
-                }
+                //TODO: Add profile
             }
             else
             {
-                textBoxDoctorRegisterName.BackColor = Color.Red;
-                textBoxDoctorRegisterSurname.BackColor = Color.Red;
-                textBoxDoctorRegisterBranch.BackColor = Color.Red;
-                maskedTextBoxDoctorRegisterTC.BackColor = Color.Red;
-                textBoxDoctorRegisterPassword.BackColor = Color.Red;
-
                 MessageBox.Show("Herhangi bir alan boş bırakılamaz.");
             }
         }
 
         private void buttonPatientRegister_Click(object sender, EventArgs e)
         {
-            // Reset textBox and maskedTextBox colors
+            // Reset input field colors.
             textBoxPatientRegisterName.BackColor = Color.FromArgb(255, 25, 28, 33);
             textBoxPatientRegisterSurname.BackColor = Color.FromArgb(255, 25, 28, 33);
             maskedTextBoxPatientRegisterTC.BackColor = Color.FromArgb(255, 25, 28, 33);
             textBoxPatientRegisterPassword.BackColor = Color.FromArgb(255, 25, 28, 33);
+            radioButtonMale.BackColor = Color.FromArgb(255, 25, 28, 33);
+            radioButtonFemale.BackColor = Color.FromArgb(255, 25, 28, 33);
 
             bool? isMale;
-            if (radioButtonMale.Checked)
+            if (radioButtonMale.Checked == true)
             {
                 isMale = true;
             }
-            else if (radioButtonFemale.Checked)
+            else if (radioButtonFemale.Checked == true)
             {
                 isMale = false;
             }
@@ -412,36 +399,41 @@ namespace HYS
                 isMale = null;
             }
 
-            // Check registration info
-            bool isValid = textBoxPatientRegisterName.Text.Length != 0;
+            // Check the validity of the input.
+            bool isValid = true;
+            if (textBoxPatientRegisterName.Text.Length == 0)
+            {
+                isValid = false;
+                textBoxPatientRegisterName.BackColor = Color.Red;
+            }
             if (textBoxPatientRegisterSurname.Text.Length == 0)
             {
                 isValid = false;
+                textBoxPatientRegisterSurname.BackColor = Color.Red;
             }
             if (maskedTextBoxPatientRegisterTC.Text.Length != 11)
             {
                 isValid = false;
+                maskedTextBoxPatientRegisterTC.BackColor = Color.Red;
             }
             if (isMale == null)
             {
                 isValid = false;
+                radioButtonMale.BackColor = Color.Red;
+                radioButtonFemale.BackColor= Color.Red;
             }
             if (textBoxPatientRegisterPassword.Text.Length == 0)
             {
                 isValid = false;
+                textBoxPatientRegisterPassword.BackColor = Color.Red;
             }
 
             if (isValid)
             {
-                // TODO: Create a patient profile.
+                //TODO: Add profile
             }
             else
             {
-                textBoxPatientRegisterName.BackColor = Color.Red;
-                textBoxPatientRegisterSurname.BackColor = Color.Red;
-                maskedTextBoxPatientRegisterTC.BackColor = Color.Red;
-                textBoxPatientRegisterPassword.BackColor = Color.Red;
-
                 MessageBox.Show("Herhangi bir alan boş bırakılamaz.");
             }
         }
@@ -450,32 +442,8 @@ namespace HYS
         {
             maskedTextBoxPatientLoginTC.BackColor = Color.FromArgb(255, 25, 28, 33);
             textBoxPatientLoginPassword.BackColor = Color.FromArgb(255, 25, 28, 33);
-
-            conn.Open();
-
-            SqlCommand cmd = new SqlCommand("select * from TablePatients Where PatientTC = @tc and PatientPassword = @password", conn);
-            cmd.Parameters.AddWithValue("@tc", maskedTextBoxPatientLoginTC.Text);
-            cmd.Parameters.AddWithValue("@password", textBoxPatientLoginPassword.Text);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            if (reader.Read())
-            {
-                FormPatient formPatient = new FormPatient();
-                formPatient.patientTC = maskedTextBoxPatientLoginTC.Text;
-                formPatient.previousForm = this;
-                formPatient.Show();
-                Hide();
-                ResetForm();
-            }
-            else
-            {
-                maskedTextBoxPatientLoginTC.BackColor = Color.Red;
-                textBoxPatientLoginPassword.BackColor = Color.Red;
-
-                MessageBox.Show("Yanlış TC kimlik no veya şifre.");
-            }
-
-            conn.Close();
+            
+            //TODO: Add login functionality
         }
 
         private void buttonDoctorLogin_Click(object sender, EventArgs e)
