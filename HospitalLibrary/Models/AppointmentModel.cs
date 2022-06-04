@@ -1,4 +1,6 @@
-﻿namespace HospitalLibrary.Models
+﻿using System;
+
+namespace HospitalLibrary.Models
 {
     public class AppointmentModel
     {
@@ -20,6 +22,18 @@
         /// <summary>
         /// Appointment's date.
         /// </summary>
-        public int Date { get; set; }
+        public DateTime Date { get; set; }
+
+        public AppointmentModel()
+        {
+            
+        }
+
+        public AppointmentModel(int patientId, int doctorId, DateTime date)
+        {
+            PatientId = patientId;
+            DoctorId = doctorId;
+            Date = date;
+        }
     }
 }

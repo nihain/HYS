@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FormAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAppointment.Designer.cs">
+      <DependentUpon>FormAppointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FormAppointment.resx">
+      <DependentUpon>FormAppointment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDoctor.resx">
       <DependentUpon>FormDoctor.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,12 +107,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\hys icon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\user.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="HospitalLibrary\HospitalLibrary.csproj">

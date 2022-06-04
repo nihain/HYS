@@ -36,8 +36,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelAppointmentsFilter = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -46,9 +50,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panelMakeAppointment = new System.Windows.Forms.Panel();
+            this.labelMakeAppointment = new System.Windows.Forms.Label();
+            this.pictureBoxMakeAppointment = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -60,14 +64,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonSignOut = new System.Windows.Forms.Button();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -75,12 +76,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panelMakeAppointment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMakeAppointment)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -168,11 +168,65 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(814, 251);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Controls.Add(this.button1, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.button2, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.button3, 0, 3);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(667, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 4;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(144, 245);
+            this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(3, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 64);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Tümü";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(3, 103);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(138, 67);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Geçmiş";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(3, 176);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(138, 66);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Gelecek";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.labelAppointmentsFilter, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.dataGridView1, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
@@ -183,18 +237,18 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(658, 245);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
-            // label6
+            // labelAppointmentsFilter
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("IBM Plex Mono Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(0, 1);
-            this.label6.Margin = new System.Windows.Forms.Padding(0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(246, 27);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Gelecek Randevular";
+            this.labelAppointmentsFilter.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelAppointmentsFilter.AutoSize = true;
+            this.labelAppointmentsFilter.Font = new System.Drawing.Font("IBM Plex Mono Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAppointmentsFilter.ForeColor = System.Drawing.Color.White;
+            this.labelAppointmentsFilter.Location = new System.Drawing.Point(0, 1);
+            this.labelAppointmentsFilter.Margin = new System.Windows.Forms.Padding(0);
+            this.labelAppointmentsFilter.Name = "labelAppointmentsFilter";
+            this.labelAppointmentsFilter.Size = new System.Drawing.Size(194, 27);
+            this.labelAppointmentsFilter.TabIndex = 4;
+            this.labelAppointmentsFilter.Text = "Tüm Randevular";
             // 
             // dataGridView1
             // 
@@ -214,7 +268,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tableLayoutPanel1.Controls.Add(this.panel6, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panelMakeAppointment, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 170);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -291,39 +345,42 @@
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
             // 
-            // panel4
+            // panelMakeAppointment
             // 
-            this.panel4.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(258, 70);
-            this.panel4.TabIndex = 0;
+            this.panelMakeAppointment.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panelMakeAppointment.Controls.Add(this.labelMakeAppointment);
+            this.panelMakeAppointment.Controls.Add(this.pictureBoxMakeAppointment);
+            this.panelMakeAppointment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMakeAppointment.Location = new System.Drawing.Point(0, 0);
+            this.panelMakeAppointment.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
+            this.panelMakeAppointment.Name = "panelMakeAppointment";
+            this.panelMakeAppointment.Size = new System.Drawing.Size(258, 70);
+            this.panelMakeAppointment.TabIndex = 0;
+            this.panelMakeAppointment.Click += new System.EventHandler(this.panelMakeAppointment_Click);
             // 
-            // label9
+            // labelMakeAppointment
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(103, 23);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(122, 25);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Randevu Al";
+            this.labelMakeAppointment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelMakeAppointment.AutoSize = true;
+            this.labelMakeAppointment.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMakeAppointment.Location = new System.Drawing.Point(103, 23);
+            this.labelMakeAppointment.Name = "labelMakeAppointment";
+            this.labelMakeAppointment.Size = new System.Drawing.Size(122, 25);
+            this.labelMakeAppointment.TabIndex = 1;
+            this.labelMakeAppointment.Text = "Randevu Al";
+            this.labelMakeAppointment.Click += new System.EventHandler(this.labelMakeAppointment_Click);
             // 
-            // pictureBox3
+            // pictureBoxMakeAppointment
             // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(47, 10);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
+            this.pictureBoxMakeAppointment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxMakeAppointment.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMakeAppointment.Image")));
+            this.pictureBoxMakeAppointment.Location = new System.Drawing.Point(47, 10);
+            this.pictureBoxMakeAppointment.Name = "pictureBoxMakeAppointment";
+            this.pictureBoxMakeAppointment.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxMakeAppointment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMakeAppointment.TabIndex = 0;
+            this.pictureBoxMakeAppointment.TabStop = false;
+            this.pictureBoxMakeAppointment.Click += new System.EventHandler(this.pictureBoxMakeAppointment_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -448,60 +505,6 @@
             this.buttonSignOut.UseVisualStyleBackColor = false;
             this.buttonSignOut.Click += new System.EventHandler(this.buttonSignOut_Click);
             // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.button1, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.button2, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.button3, 0, 3);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(667, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 4;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(144, 245);
-            this.tableLayoutPanel3.TabIndex = 3;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(3, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 64);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Tümü";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(3, 103);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 67);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Geçmiş";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(3, 176);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(138, 66);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Gelecek";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // FormPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -514,15 +517,16 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(850, 600);
             this.Name = "FormPatient";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hasta Menüsü";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPatient_FormClosed);
-            this.Load += new System.EventHandler(this.FormPatient_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -533,14 +537,13 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panelMakeAppointment.ResumeLayout(false);
+            this.panelMakeAppointment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMakeAppointment)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -570,13 +573,13 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panelMakeAppointment;
+        private System.Windows.Forms.Label labelMakeAppointment;
+        private System.Windows.Forms.PictureBox pictureBoxMakeAppointment;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button buttonSignOut;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelAppointmentsFilter;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button button1;

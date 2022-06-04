@@ -14,8 +14,6 @@ namespace HYS.Forms
             InitializeComponent();
         }
         
-        //TODO: Change radiobutton color
-        
         /// <summary>
         /// Disable animation triggers.
         /// </summary>
@@ -492,9 +490,7 @@ namespace HYS.Forms
                 if (profile)
                 {
                     GlobalConfig.Connection.PatientLogin(model);
-                    FormPatient pf = new FormPatient();
-                    pf.Model = model;
-                    pf.PreviousForm = this;
+                    FormPatient pf = new FormPatient(model, this);
                     pf.Show();
                     Hide();
                     ResetForm();

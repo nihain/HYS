@@ -41,7 +41,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelAppointmentsFilter = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -209,7 +209,7 @@
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.labelAppointmentsFilter, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.dataGridView1, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
@@ -220,18 +220,18 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(658, 325);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
-            // label6
+            // labelAppointmentsFilter
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("IBM Plex Mono Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(0, 1);
-            this.label6.Margin = new System.Windows.Forms.Padding(0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(246, 27);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Gelecek Randevular";
+            this.labelAppointmentsFilter.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.labelAppointmentsFilter.AutoSize = true;
+            this.labelAppointmentsFilter.Font = new System.Drawing.Font("IBM Plex Mono Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAppointmentsFilter.ForeColor = System.Drawing.Color.White;
+            this.labelAppointmentsFilter.Location = new System.Drawing.Point(0, 1);
+            this.labelAppointmentsFilter.Margin = new System.Windows.Forms.Padding(0);
+            this.labelAppointmentsFilter.Name = "labelAppointmentsFilter";
+            this.labelAppointmentsFilter.Size = new System.Drawing.Size(194, 27);
+            this.labelAppointmentsFilter.TabIndex = 4;
+            this.labelAppointmentsFilter.Text = "Tüm Randevular";
             // 
             // dataGridView1
             // 
@@ -376,10 +376,11 @@
             this.Font = new System.Drawing.Font("IBM Plex Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
+            this.MinimumSize = new System.Drawing.Size(850, 600);
             this.Name = "FormDoctor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Doktor Menüsü";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDoctor_FormClosed);
-            this.Load += new System.EventHandler(this.FormDoctor_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -420,7 +421,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelAppointmentsFilter;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

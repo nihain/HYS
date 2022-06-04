@@ -1,4 +1,6 @@
-﻿using HospitalLibrary.Models;
+﻿using System;
+using System.Collections.Generic;
+using HospitalLibrary.Models;
 
 namespace HospitalLibrary.DataConnections
 {
@@ -15,5 +17,13 @@ namespace HospitalLibrary.DataConnections
         DoctorModel DoctorLogin(DoctorModel model);
 
         PatientModel PatientLogin(PatientModel model);
+
+        List<string> GetDoctorBranches();
+
+        List<DoctorModel> GetDoctorByBranch(string branch);
+
+        void CreateAppointment(AppointmentModel model);
+
+        bool CheckAppointmentOverlap(AppointmentModel model);
     }
 }

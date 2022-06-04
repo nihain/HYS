@@ -6,20 +6,25 @@ namespace HYS.Forms
 {
     public partial class FormPatient : Form
     {
-        public FormPatient()
+        public FormPatient(PatientModel model, FormLoginRegister previousForm)
         {
             InitializeComponent();
+
+            _model = model;
+            _previousForm = previousForm;
+
+            InitializeLabels();
         }
 
-        public PatientModel Model;
-        public FormLoginRegister PreviousForm;
+        private readonly PatientModel _model;
+        private readonly FormLoginRegister _previousForm;
 
-        private void FormPatient_Load(object sender, EventArgs e)
+        private void InitializeLabels()
         {
-            labelDashPatientName.Text = Model.Name;
-            labelPatientName.Text = Model.Name;
-            labelPatientSurname.Text = Model.Surname;
-            labelPatientTC.Text = Model.TcId;
+            labelDashPatientName.Text = _model.Name;
+            labelPatientName.Text = _model.Name;
+            labelPatientSurname.Text = _model.Surname;
+            labelPatientTC.Text = _model.TcId;
         }
 
         private void buttonSignOut_Click(object sender, EventArgs e)
@@ -29,7 +34,27 @@ namespace HYS.Forms
 
         private void FormPatient_FormClosed(object sender, FormClosedEventArgs e)
         {
-            PreviousForm.Show();
+            _previousForm.Show();
+        }
+
+        // I am sorry for this spaghetti. Winforms doesn't allow custom buttons.
+        //TODO: Make a transparent pictureBox overlay and just use its eventHandler.
+        private void labelMakeAppointment_Click(object sender, EventArgs e)
+        {
+            MakeAppointment();
+        }
+        private void pictureBoxMakeAppointment_Click(object sender, EventArgs e)
+        {
+            MakeAppointment();
+        }
+        private void panelMakeAppointment_Click(object sender, EventArgs e)
+        {
+            MakeAppointment();
+        }
+        private void MakeAppointment()
+        {
+            FormAppointment af = new FormAppointment(_model.Id);
+            af.Show();
         }
     }
 }

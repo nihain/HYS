@@ -3,6 +3,9 @@ using System.Windows.Forms;
 
 namespace HYS.Forms
 {
+    //TODO: create edit profile button
+    //TODO: set constructor
+    
     public partial class FormDoctor : Form
     {
         public FormDoctor()
@@ -11,11 +14,6 @@ namespace HYS.Forms
         }
         
         public Form PreviousForm;
-
-        private void FormDoctor_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void buttonSignOut_Click(object sender, EventArgs e)
         {

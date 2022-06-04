@@ -39,6 +39,11 @@ namespace HospitalLibrary.Models
         /// </summary>
         public DateTime CreateDate { get; set; }
 
+        /// <summary>
+        /// Doctor's full name.
+        /// </summary>
+        public string FullName => $"{Name} {Surname}";
+
         public DoctorModel()
         {
             

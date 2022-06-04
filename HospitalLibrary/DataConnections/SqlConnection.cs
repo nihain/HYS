@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using Dapper;
 using HospitalLibrary.Models;
 
@@ -7,6 +9,8 @@ namespace HospitalLibrary.DataConnections
 {
     public class SqlConnection : IDataConnection
     {
+        private const string Db = "Hospital";
+        
         /// <summary>
         /// Saves a new doctor profile to database.
         /// </summary>
@@ -16,7 +20,7 @@ namespace HospitalLibrary.DataConnections
         {
             // Basically SqlConnection.Open() and SqlConnection.Close() in one block.
             using (IDbConnection connection =
-                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hospital")))
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@Name", model.Name);
@@ -26,6 +30,8 @@ namespace HospitalLibrary.DataConnections
                 p.Add("@Password", model.Password);
                 p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
                 
+                // You have to set the property CommandType for the Command to StoredProcedure if your procedure
+                // uses parameters. Otherwise it won't detect them.
                 connection.Execute("dbo.spDoctors_Insert", p, commandType: CommandType.StoredProcedure);
 
                 model.Id = p.Get<int>("@id");
@@ -42,7 +48,7 @@ namespace HospitalLibrary.DataConnections
         public PatientModel CreatePatientProfile(PatientModel model)
         {
             using (IDbConnection connection =
-                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hospital")))
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@Name", model.Name);
@@ -63,7 +69,7 @@ namespace HospitalLibrary.DataConnections
         public bool DoctorLoginCheck(DoctorModel model)
         {
             using (IDbConnection connection =
-                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hospital")))
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@TcId", model.TcId);
@@ -86,7 +92,7 @@ namespace HospitalLibrary.DataConnections
         public bool PatientLoginCheck(PatientModel model)
         {
             using (IDbConnection connection =
-                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hospital")))
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@TcId", model.TcId);
@@ -109,7 +115,7 @@ namespace HospitalLibrary.DataConnections
         public DoctorModel DoctorLogin(DoctorModel model)
         {
             using (IDbConnection connection =
-                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hospital")))
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@TcId", model.TcId);
@@ -134,7 +140,7 @@ namespace HospitalLibrary.DataConnections
         public PatientModel PatientLogin(PatientModel model)
         {
             using (IDbConnection connection =
-                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hospital")))
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
             {
                 var p = new DynamicParameters();
                 p.Add("@TcId", model.TcId);
@@ -154,6 +160,75 @@ namespace HospitalLibrary.DataConnections
             }
 
             return model;
+        }
+
+        public List<string> GetDoctorBranches()
+        {
+            List<string> output;
+
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                output = connection.Query<string>("dbo.spDoctors_GetBranches").ToList();
+            }
+
+            return output;
+        }
+
+        public List<DoctorModel> GetDoctorByBranch(string branch)
+        {
+            List<DoctorModel> output;
+
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@Branch", branch);
+                
+                output = connection.Query<DoctorModel>("dbo.spDoctors_GetByBranch", p,
+                    commandType: CommandType.StoredProcedure).ToList();
+            }
+
+            return output;
+        }
+
+        public void CreateAppointment(AppointmentModel model)
+        {
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@PatientID", model.PatientId);
+                p.Add("@DoctorID", model.DoctorId);
+                p.Add("@Date", model.Date);
+
+                connection.Execute("dbo.spAppointments_Insert", p, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public bool CheckAppointmentOverlap(AppointmentModel model)
+        {
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@PatientID", model.PatientId);
+                p.Add("@DoctorID", model.DoctorId);
+                p.Add("@Date", model.Date);
+
+                var reader =
+                    connection.ExecuteReader("dbo.spAppointments_GetOverlap", p,
+                        commandType: CommandType.StoredProcedure);
+
+                if (reader.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
     }
 }
