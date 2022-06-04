@@ -52,6 +52,7 @@ namespace HYS.Forms
 
         /// <summary>
         /// Clear all textBoxes, maskedTextBoxes and uncheck radioButtons.
+        /// Also changes their colors to initial state.
         /// </summary>
         void ClearText()
         {
@@ -468,16 +469,89 @@ namespace HYS.Forms
             maskedTextBoxPatientLoginTC.BackColor = Color.FromArgb(255, 25, 28, 33);
             textBoxPatientLoginPassword.BackColor = Color.FromArgb(255, 25, 28, 33);
             
-            //TODO: Add login functionality
+            bool isValid = true;
+            if (maskedTextBoxPatientLoginTC.Text.Length != 11)
+            {
+                isValid = false;
+                maskedTextBoxPatientLoginTC.BackColor = Color.Red;
+            }
+            if (textBoxPatientLoginPassword.Text.Length == 0)
+            {
+                isValid = false;
+                textBoxPatientLoginPassword.BackColor = Color.Red;
+            }
+
+            if (isValid)
+            {
+                PatientModel model = new PatientModel(
+                    maskedTextBoxPatientLoginTC.Text,
+                    textBoxPatientLoginPassword.Text);
+
+                bool profile = GlobalConfig.Connection.PatientLoginCheck(model);
+
+                if (profile)
+                {
+                    GlobalConfig.Connection.PatientLogin(model);
+                    FormPatient pf = new FormPatient();
+                    pf.Model = model;
+                    pf.PreviousForm = this;
+                    pf.Show();
+                    Hide();
+                    ResetForm();
+                }
+                else
+                {
+                    maskedTextBoxPatientLoginTC.BackColor = Color.Red;
+                    textBoxPatientLoginPassword.BackColor = Color.Red;
+                    MessageBox.Show("TC Kimlik No/Şifre yanlış.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Herhangi bir alan boş bırakılamaz.");
+            }
         }
 
         private void buttonDoctorLogin_Click(object sender, EventArgs e)
         {
-            FormDoctor formDoctor = new FormDoctor();
-            formDoctor.PreviousForm = this;
-            formDoctor.Show();
-            Hide();
-            ResetForm();
+            maskedTextBoxDoctorLoginTC.BackColor = Color.FromArgb(255, 25, 28, 33);
+            textBoxDoctorLoginPassword.BackColor = Color.FromArgb(255, 25, 28, 33);
+            
+            bool isValid = true;
+            if (maskedTextBoxDoctorLoginTC.Text.Length != 11)
+            {
+                isValid = false;
+                maskedTextBoxDoctorLoginTC.BackColor = Color.Red;
+            }
+            if (textBoxDoctorLoginPassword.Text.Length == 0)
+            {
+                isValid = false;
+                textBoxDoctorLoginPassword.BackColor = Color.Red;
+            }
+
+            if (isValid)
+            {
+                DoctorModel model = new DoctorModel(
+                    maskedTextBoxDoctorLoginTC.Text,
+                    textBoxDoctorLoginPassword.Text);
+                
+                bool profile = GlobalConfig.Connection.DoctorLoginCheck(model);
+
+                if (profile)
+                {
+                    //TODO: Implement doctor form
+                }
+                else
+                {
+                    maskedTextBoxDoctorLoginTC.BackColor = Color.Red;
+                    textBoxDoctorLoginPassword.BackColor = Color.Red;
+                    MessageBox.Show("TC Kimlik No/Şifre yanlış.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Herhangi bir alan boş bırakılamaz.");
+            }
         }
     }
 }

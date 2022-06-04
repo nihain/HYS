@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Data.SqlClient;
 using System.Windows.Forms;
+using HospitalLibrary.Models;
 
 namespace HYS.Forms
 {
@@ -11,28 +11,15 @@ namespace HYS.Forms
             InitializeComponent();
         }
 
-        SqlConnection conn = new SqlConnection("Data Source = MATEBOOK\\SQLEXPRESS; Initial Catalog = HospitalDB; Integrated Security = True");
-
-        public string patientTC;
-        public Form previousForm;
+        public PatientModel Model;
+        public FormLoginRegister PreviousForm;
 
         private void FormPatient_Load(object sender, EventArgs e)
         {
-            conn.Open();
-
-            SqlCommand cmd = new SqlCommand("select PatientName, PatientSurname from TablePatients where PatientTC = @tc", conn);
-            cmd.Parameters.AddWithValue("@tc", patientTC);
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                labelDashPatientName.Text = reader[0] + ".";
-                labelPatientName.Text = reader[0].ToString();
-                labelPatientSurname.Text = reader[1].ToString();
-                labelPatientTC.Text = patientTC;
-            }
-
-            conn.Close();
+            labelDashPatientName.Text = Model.Name;
+            labelPatientName.Text = Model.Name;
+            labelPatientSurname.Text = Model.Surname;
+            labelPatientTC.Text = Model.TcId;
         }
 
         private void buttonSignOut_Click(object sender, EventArgs e)
@@ -42,7 +29,7 @@ namespace HYS.Forms
 
         private void FormPatient_FormClosed(object sender, FormClosedEventArgs e)
         {
-            previousForm.Show();
+            PreviousForm.Show();
         }
     }
 }

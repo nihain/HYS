@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="18a1202f-9cbc-4d0d-98fb-90a98b7f66c3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HYS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HYS/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Forms/FormLoginRegister.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormLoginRegister.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Forms/FormLoginRegister.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormLoginRegister.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Forms/FormPatient.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormPatient.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalLibrary/DataConnections/IDataConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalLibrary/DataConnections/IDataConnection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalLibrary/DataConnections/SqlConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalLibrary/DataConnections/SqlConnection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalLibrary/Models/DoctorModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalLibrary/Models/DoctorModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HospitalLibrary/Models/PatientModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalLibrary/Models/PatientModel.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +70,7 @@
       <workItem from="1654275562103" duration="2475000" />
       <workItem from="1654278254310" duration="657000" />
       <workItem from="1654279078540" duration="122000" />
+      <workItem from="1654315517498" duration="5892000" />
     </task>
     <task id="LOCAL-00001" summary="implement doctor registration">
       <created>1654267884253</created>

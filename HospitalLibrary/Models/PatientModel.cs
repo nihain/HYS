@@ -1,4 +1,6 @@
-﻿namespace HospitalLibrary.Models
+﻿using System;
+
+namespace HospitalLibrary.Models
 {
     public class PatientModel
     {
@@ -32,9 +34,20 @@
         /// </summary>
         public string Password { get; set; }
 
+        /// <summary>
+        /// Patient's profile create date.
+        /// </summary>
+        public DateTime CreateDate { get; set; }
+
         public PatientModel()
         {
             
+        }
+
+        public PatientModel(string tcId, string password)
+        {
+            TcId = tcId;
+            Password = password;
         }
 
         public PatientModel(string name, string surname, string tcId, bool? gender, string password)

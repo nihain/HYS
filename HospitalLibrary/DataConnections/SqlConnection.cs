@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using Dapper;
 using HospitalLibrary.Models;
 
@@ -57,6 +58,102 @@ namespace HospitalLibrary.DataConnections
 
                 return model;
             }
+        }
+
+        public bool DoctorLoginCheck(DoctorModel model)
+        {
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hospital")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@TcId", model.TcId);
+                p.Add("@Password", model.Password);
+
+                var reader =
+                    connection.ExecuteReader("dbo.spDoctors_Login", p, commandType: CommandType.StoredProcedure);
+
+                if (reader.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public bool PatientLoginCheck(PatientModel model)
+        {
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hospital")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@TcId", model.TcId);
+                p.Add("@Password", model.Password);
+
+                var reader =
+                    connection.ExecuteReader("dbo.spPatients_Login", p, commandType: CommandType.StoredProcedure);
+
+                if (reader.Read())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public DoctorModel DoctorLogin(DoctorModel model)
+        {
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hospital")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@TcId", model.TcId);
+                p.Add("@Password", model.Password);
+
+                var reader =
+                    connection.ExecuteReader("dbo.spDoctors_Login", p, commandType: CommandType.StoredProcedure);
+
+                while (reader.Read())
+                {
+                    model.Id = Convert.ToInt32(reader[0]);
+                    model.Name = reader[1].ToString();
+                    model.Surname = reader[2].ToString();
+                    model.Branch = reader[4].ToString();
+                    model.CreateDate = Convert.ToDateTime(reader[6]);
+                }
+            }
+
+            return model;
+        }
+
+        public PatientModel PatientLogin(PatientModel model)
+        {
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString("Hospital")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@TcId", model.TcId);
+                p.Add("@Password", model.Password);
+
+                var reader =
+                    connection.ExecuteReader("dbo.spPatients_Login", p, commandType: CommandType.StoredProcedure);
+
+                while (reader.Read())
+                {
+                    model.Id = Convert.ToInt32(reader[0]);
+                    model.Name = reader[1].ToString();
+                    model.Surname = reader[2].ToString();
+                    model.Gender = Convert.ToBoolean(reader[4]);
+                    model.CreateDate = Convert.ToDateTime(reader[6]);
+                }
+            }
+
+            return model;
         }
     }
 }
