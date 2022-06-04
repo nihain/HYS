@@ -1,2 +1,2 @@
 # HYS
- An extremely watered down MHRS (Central Doctor Appointment System) clone.
+ An extremely basic hospital management system.
