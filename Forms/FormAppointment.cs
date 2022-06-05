@@ -13,13 +13,15 @@ namespace HYS.Forms
         private List<DoctorModel> _doctors;
         private readonly List<string> _defaultPrompt = new List<string>();
         private readonly int _patientId;
+        private FormPatient _previousForm;
 
-        public FormAppointment(int patientId)
+        public FormAppointment(int patientId, FormPatient previousForm)
         {
             InitializeComponent();
 
             _patientId = patientId;
-            
+            _previousForm = previousForm;
+
             InitializeLists();
         }
 
@@ -89,6 +91,7 @@ namespace HYS.Forms
                 else
                 {
                     GlobalConfig.Connection.CreateAppointment(model);
+                    _previousForm.ReloadGrid();
                     MessageBox.Show("Randevu oluşturuldu!");
                     Close();
                 }

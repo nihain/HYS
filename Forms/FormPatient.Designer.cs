@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPatient));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -37,19 +41,19 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonGridAll = new System.Windows.Forms.Button();
+            this.buttonGridPast = new System.Windows.Forms.Button();
+            this.buttonGridUpcoming = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.labelAppointmentsFilter = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panelEditProfile = new System.Windows.Forms.Panel();
+            this.labelEditProfile = new System.Windows.Forms.Label();
+            this.pictureBoxEditProfile = new System.Windows.Forms.PictureBox();
+            this.panelDeleteAppointment = new System.Windows.Forms.Panel();
+            this.labelDeleteAppointment = new System.Windows.Forms.Label();
+            this.pictureBoxDeleteAppointment = new System.Windows.Forms.PictureBox();
             this.panelMakeAppointment = new System.Windows.Forms.Panel();
             this.labelMakeAppointment = new System.Windows.Forms.Label();
             this.pictureBoxMakeAppointment = new System.Windows.Forms.PictureBox();
@@ -72,10 +76,10 @@
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panelEditProfile.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEditProfile)).BeginInit();
+            this.panelDeleteAppointment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeleteAppointment)).BeginInit();
             this.panelMakeAppointment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMakeAppointment)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -172,9 +176,9 @@
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.button1, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.button2, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.button3, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.buttonGridAll, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.buttonGridPast, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.buttonGridUpcoming, 0, 3);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(667, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -186,41 +190,44 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(144, 245);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
-            // button1
+            // buttonGridAll
             // 
-            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(3, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 64);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Tümü";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonGridAll.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonGridAll.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonGridAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGridAll.Location = new System.Drawing.Point(3, 33);
+            this.buttonGridAll.Name = "buttonGridAll";
+            this.buttonGridAll.Size = new System.Drawing.Size(138, 64);
+            this.buttonGridAll.TabIndex = 1;
+            this.buttonGridAll.Text = "Tümü";
+            this.buttonGridAll.UseVisualStyleBackColor = false;
+            this.buttonGridAll.Click += new System.EventHandler(this.buttonGridAll_Click);
             // 
-            // button2
+            // buttonGridPast
             // 
-            this.button2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(3, 103);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 67);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Geçmiş";
-            this.button2.UseVisualStyleBackColor = false;
+            this.buttonGridPast.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonGridPast.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonGridPast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGridPast.Location = new System.Drawing.Point(3, 103);
+            this.buttonGridPast.Name = "buttonGridPast";
+            this.buttonGridPast.Size = new System.Drawing.Size(138, 67);
+            this.buttonGridPast.TabIndex = 2;
+            this.buttonGridPast.Text = "Geçmiş";
+            this.buttonGridPast.UseVisualStyleBackColor = false;
+            this.buttonGridPast.Click += new System.EventHandler(this.buttonGridPast_Click);
             // 
-            // button3
+            // buttonGridUpcoming
             // 
-            this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(3, 176);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(138, 66);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Gelecek";
-            this.button3.UseVisualStyleBackColor = false;
+            this.buttonGridUpcoming.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonGridUpcoming.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonGridUpcoming.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGridUpcoming.Location = new System.Drawing.Point(3, 176);
+            this.buttonGridUpcoming.Name = "buttonGridUpcoming";
+            this.buttonGridUpcoming.Size = new System.Drawing.Size(138, 66);
+            this.buttonGridUpcoming.TabIndex = 3;
+            this.buttonGridUpcoming.Text = "Gelecek";
+            this.buttonGridUpcoming.UseVisualStyleBackColor = false;
+            this.buttonGridUpcoming.Click += new System.EventHandler(this.buttonGridUpcoming_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -252,11 +259,48 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("IBM Plex Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("IBM Plex Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(44)))), ((int)(((byte)(52)))));
             this.dataGridView1.Location = new System.Drawing.Point(3, 33);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("IBM Plex Mono", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.SlateGray;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dataGridView1.RowTemplate.Height = 35;
             this.dataGridView1.Size = new System.Drawing.Size(652, 209);
             this.dataGridView1.TabIndex = 5;
             // 
@@ -266,8 +310,8 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
-            this.tableLayoutPanel1.Controls.Add(this.panel6, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel5, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panelEditProfile, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panelDeleteAppointment, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panelMakeAppointment, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(10, 170);
@@ -277,73 +321,79 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(814, 80);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // panel6
+            // panelEditProfile
             // 
-            this.panel6.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel6.Controls.Add(this.label11);
-            this.panel6.Controls.Add(this.pictureBox5);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(544, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(260, 70);
-            this.panel6.TabIndex = 2;
+            this.panelEditProfile.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panelEditProfile.Controls.Add(this.labelEditProfile);
+            this.panelEditProfile.Controls.Add(this.pictureBoxEditProfile);
+            this.panelEditProfile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEditProfile.Location = new System.Drawing.Point(544, 0);
+            this.panelEditProfile.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
+            this.panelEditProfile.Name = "panelEditProfile";
+            this.panelEditProfile.Size = new System.Drawing.Size(260, 70);
+            this.panelEditProfile.TabIndex = 2;
+            this.panelEditProfile.Click += new System.EventHandler(this.panelEditProfile_Click);
             // 
-            // label11
+            // labelEditProfile
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(69, 23);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(188, 25);
-            this.label11.TabIndex = 1;
-            this.label11.Text = "Profili Güncelle";
+            this.labelEditProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelEditProfile.AutoSize = true;
+            this.labelEditProfile.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEditProfile.Location = new System.Drawing.Point(69, 23);
+            this.labelEditProfile.Name = "labelEditProfile";
+            this.labelEditProfile.Size = new System.Drawing.Size(177, 25);
+            this.labelEditProfile.TabIndex = 1;
+            this.labelEditProfile.Text = "Profili Düzenle";
+            this.labelEditProfile.Click += new System.EventHandler(this.labelEditProfile_Click);
             // 
-            // pictureBox5
+            // pictureBoxEditProfile
             // 
-            this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(13, 10);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
+            this.pictureBoxEditProfile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxEditProfile.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEditProfile.Image")));
+            this.pictureBoxEditProfile.Location = new System.Drawing.Point(13, 10);
+            this.pictureBoxEditProfile.Name = "pictureBoxEditProfile";
+            this.pictureBoxEditProfile.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxEditProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxEditProfile.TabIndex = 0;
+            this.pictureBoxEditProfile.TabStop = false;
+            this.pictureBoxEditProfile.Click += new System.EventHandler(this.pictureBoxEditProfile_Click);
             // 
-            // panel5
+            // panelDeleteAppointment
             // 
-            this.panel5.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.panel5.Controls.Add(this.label10);
-            this.panel5.Controls.Add(this.pictureBox4);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(268, 0);
-            this.panel5.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(266, 70);
-            this.panel5.TabIndex = 1;
+            this.panelDeleteAppointment.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panelDeleteAppointment.Controls.Add(this.labelDeleteAppointment);
+            this.panelDeleteAppointment.Controls.Add(this.pictureBoxDeleteAppointment);
+            this.panelDeleteAppointment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDeleteAppointment.Location = new System.Drawing.Point(268, 0);
+            this.panelDeleteAppointment.Margin = new System.Windows.Forms.Padding(0, 0, 10, 10);
+            this.panelDeleteAppointment.Name = "panelDeleteAppointment";
+            this.panelDeleteAppointment.Size = new System.Drawing.Size(266, 70);
+            this.panelDeleteAppointment.TabIndex = 1;
+            this.panelDeleteAppointment.Click += new System.EventHandler(this.panelDeleteAppointment_Click);
             // 
-            // label10
+            // labelDeleteAppointment
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(91, 23);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(155, 25);
-            this.label10.TabIndex = 1;
-            this.label10.Text = "Randevu İptal";
+            this.labelDeleteAppointment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelDeleteAppointment.AutoSize = true;
+            this.labelDeleteAppointment.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDeleteAppointment.Location = new System.Drawing.Point(91, 23);
+            this.labelDeleteAppointment.Name = "labelDeleteAppointment";
+            this.labelDeleteAppointment.Size = new System.Drawing.Size(155, 25);
+            this.labelDeleteAppointment.TabIndex = 1;
+            this.labelDeleteAppointment.Text = "Randevu İptal";
+            this.labelDeleteAppointment.Click += new System.EventHandler(this.labelDeleteAppointment_Click);
             // 
-            // pictureBox4
+            // pictureBoxDeleteAppointment
             // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(35, 10);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.pictureBoxDeleteAppointment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxDeleteAppointment.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxDeleteAppointment.Image")));
+            this.pictureBoxDeleteAppointment.Location = new System.Drawing.Point(35, 10);
+            this.pictureBoxDeleteAppointment.Name = "pictureBoxDeleteAppointment";
+            this.pictureBoxDeleteAppointment.Size = new System.Drawing.Size(50, 50);
+            this.pictureBoxDeleteAppointment.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxDeleteAppointment.TabIndex = 0;
+            this.pictureBoxDeleteAppointment.TabStop = false;
+            this.pictureBoxDeleteAppointment.Click += new System.EventHandler(this.pictureBoxDeleteAppointment_Click);
             // 
             // panelMakeAppointment
             // 
@@ -484,7 +534,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("IBM Plex Mono Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("IBM Plex Mono Light", 15.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(13, 10);
             this.label2.Name = "label2";
@@ -520,6 +570,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hasta Menüsü";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormPatient_FormClosed);
+            this.Load += new System.EventHandler(this.FormPatient_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -531,12 +582,12 @@
             this.tableLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panelEditProfile.ResumeLayout(false);
+            this.panelEditProfile.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEditProfile)).EndInit();
+            this.panelDeleteAppointment.ResumeLayout(false);
+            this.panelDeleteAppointment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeleteAppointment)).EndInit();
             this.panelMakeAppointment.ResumeLayout(false);
             this.panelMakeAppointment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMakeAppointment)).EndInit();
@@ -567,12 +618,12 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Panel panelEditProfile;
+        private System.Windows.Forms.Label labelEditProfile;
+        private System.Windows.Forms.PictureBox pictureBoxEditProfile;
+        private System.Windows.Forms.Panel panelDeleteAppointment;
+        private System.Windows.Forms.Label labelDeleteAppointment;
+        private System.Windows.Forms.PictureBox pictureBoxDeleteAppointment;
         private System.Windows.Forms.Panel panelMakeAppointment;
         private System.Windows.Forms.Label labelMakeAppointment;
         private System.Windows.Forms.PictureBox pictureBoxMakeAppointment;
@@ -582,8 +633,8 @@
         private System.Windows.Forms.Label labelAppointmentsFilter;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonGridAll;
+        private System.Windows.Forms.Button buttonGridPast;
+        private System.Windows.Forms.Button buttonGridUpcoming;
     }
 }

@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="18a1202f-9cbc-4d0d-98fb-90a98b7f66c3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Forms/FormAppointment.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Forms/FormAppointment.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Forms/FormAppointment.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forms/FormEditProfile.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forms/FormEditProfile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Forms/FormEditProfile.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HYS/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HYS/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Forms/FormAppointment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormAppointment.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Forms/FormDoctor.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormDoctor.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Forms/FormDoctor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormDoctor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Forms/FormLoginRegister.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormLoginRegister.cs" afterDir="false" />
@@ -17,13 +18,7 @@
       <change beforePath="$PROJECT_DIR$/Forms/FormPatient.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Forms/FormPatient.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospitalLibrary/DataConnections/IDataConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalLibrary/DataConnections/IDataConnection.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HospitalLibrary/DataConnections/SqlConnection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalLibrary/DataConnections/SqlConnection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalLibrary/Models/AppointmentModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalLibrary/Models/AppointmentModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HospitalLibrary/Models/DoctorModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/HospitalLibrary/Models/DoctorModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Properties/Resources.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Properties/Resources.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Properties/Resources.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Properties/Resources.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/hys icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/user.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hysUI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/hysUI.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,6 +83,11 @@
       <workItem from="1654346702071" duration="1249000" />
       <workItem from="1654348942265" duration="3759000" />
       <workItem from="1654357874136" duration="2910000" />
+      <workItem from="1654361463912" duration="7412000" />
+      <workItem from="1654407749991" duration="3771000" />
+      <workItem from="1654413353818" duration="1588000" />
+      <workItem from="1654415420005" duration="99000" />
+      <workItem from="1654425183379" duration="367000" />
     </task>
     <task id="LOCAL-00001" summary="implement doctor registration">
       <created>1654267884253</created>

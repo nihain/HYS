@@ -59,6 +59,12 @@
     <Compile Include="Forms\FormDoctor.Designer.cs">
       <DependentUpon>FormDoctor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormEditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditProfile.Designer.cs">
+      <DependentUpon>FormEditProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FormPatient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormDoctor.resx">
       <DependentUpon>FormDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEditProfile.resx">
+      <DependentUpon>FormEditProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLoginRegister.resx">
       <DependentUpon>FormLoginRegister.cs</DependentUpon>

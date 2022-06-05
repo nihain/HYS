@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using Dapper;
 using HospitalLibrary.Models;
@@ -228,6 +229,119 @@ namespace HospitalLibrary.DataConnections
                 {
                     return false;
                 }
+            }
+        }
+
+        public DataTable AllAppointments_GetByPatient(int patientId)
+        {
+            DataTable dataTable = new DataTable();
+
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                SqlCommand command = new SqlCommand("spAllAppointments_GetByPatient",
+                    (System.Data.SqlClient.SqlConnection)connection);
+                command.Parameters.Add(new SqlParameter("@PatientID", patientId));
+                command.CommandType = CommandType.StoredProcedure;
+                
+                var da = new SqlDataAdapter();
+                da.SelectCommand = command;
+                da.Fill(dataTable);
+            }
+
+            return dataTable;
+        }
+
+        public DataTable PastAppointments_GetByPatient(int patientId)
+        {
+            DataTable dataTable = new DataTable();
+
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                SqlCommand command = new SqlCommand("spPastAppointments_GetByPatient",
+                    (System.Data.SqlClient.SqlConnection)connection);
+                command.Parameters.Add(new SqlParameter("@PatientID", patientId));
+                command.CommandType = CommandType.StoredProcedure;
+                
+                var da = new SqlDataAdapter();
+                da.SelectCommand = command;
+                da.Fill(dataTable);
+            }
+
+            return dataTable;
+        }
+
+        public DataTable UpcomingAppointments_GetByPatient(int patientId)
+        {
+            DataTable dataTable = new DataTable();
+
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                SqlCommand command = new SqlCommand("spUpcomingAppointments_GetByPatient",
+                    (System.Data.SqlClient.SqlConnection)connection);
+                command.Parameters.Add(new SqlParameter("@PatientID", patientId));
+                command.CommandType = CommandType.StoredProcedure;
+                
+                var da = new SqlDataAdapter();
+                da.SelectCommand = command;
+                da.Fill(dataTable);
+            }
+
+            return dataTable;
+        }
+
+        public void DeleteAppointment(int patientId, DateTime date)
+        {
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@PatientID", patientId);
+                p.Add("@Date", date);
+
+                connection.Execute("dbo.spAppointments_Delete", p, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void UpdateDoctorProfile(bool mode, DoctorModel model)
+        {
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@id", model.Id);
+                p.Add("@Name", model.Name);
+                p.Add("@Surname", model.Surname);
+                p.Add("@TcId", model.TcId);
+                p.Add("@Branch", model.Branch);
+                if (mode)
+                {
+                    p.Add("@Password", model.Password);
+                }
+
+                connection.Execute("dbo.spDoctors_Update", p, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void UpdatePatientProfile(bool mode, PatientModel model)
+        {
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@id", model.Id);
+                p.Add("@Name", model.Name);
+                p.Add("@Surname", model.Surname);
+                p.Add("@TcId", model.TcId);
+                p.Add("@Gender", model.Gender);
+                if (mode)
+                {
+                    p.Add("@Password", model.Password);
+                }
+
+                connection.Execute("dbo.spPatients_Update", p, commandType: CommandType.StoredProcedure);
             }
         }
     }

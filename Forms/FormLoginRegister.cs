@@ -14,6 +14,8 @@ namespace HYS.Forms
             InitializeComponent();
         }
         
+        //TODO: Implement TC checks
+        
         /// <summary>
         /// Disable animation triggers.
         /// </summary>
@@ -490,7 +492,7 @@ namespace HYS.Forms
                 if (profile)
                 {
                     GlobalConfig.Connection.PatientLogin(model);
-                    FormPatient pf = new FormPatient(model, this);
+                    FormPatient pf = new FormPatient(this, model);
                     pf.Show();
                     Hide();
                     ResetForm();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using HospitalLibrary.Models;
 
 namespace HospitalLibrary.DataConnections
@@ -25,5 +26,17 @@ namespace HospitalLibrary.DataConnections
         void CreateAppointment(AppointmentModel model);
 
         bool CheckAppointmentOverlap(AppointmentModel model);
+
+        DataTable AllAppointments_GetByPatient(int patientId);
+        
+        DataTable PastAppointments_GetByPatient(int patientId);
+        
+        DataTable UpcomingAppointments_GetByPatient(int patientId);
+
+        void DeleteAppointment(int patientId, DateTime date);
+
+        void UpdateDoctorProfile(bool mode, DoctorModel model);
+
+        void UpdatePatientProfile(bool mode, PatientModel model);
     }
 }
