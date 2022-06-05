@@ -344,5 +344,65 @@ namespace HospitalLibrary.DataConnections
                 connection.Execute("dbo.spPatients_Update", p, commandType: CommandType.StoredProcedure);
             }
         }
+
+        public DataTable AllAppointments_GetByDoctor(int doctorId)
+        {
+            DataTable dataTable = new DataTable();
+
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                SqlCommand command = new SqlCommand("spAllAppointments_GetByDoctor",
+                    (System.Data.SqlClient.SqlConnection)connection);
+                command.Parameters.Add(new SqlParameter("@DoctorID", doctorId));
+                command.CommandType = CommandType.StoredProcedure;
+                
+                var da = new SqlDataAdapter();
+                da.SelectCommand = command;
+                da.Fill(dataTable);
+            }
+
+            return dataTable;
+        }
+
+        public DataTable PastAppointments_GetByDoctor(int doctorId)
+        {
+            DataTable dataTable = new DataTable();
+
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                SqlCommand command = new SqlCommand("spPastAppointments_GetByDoctor",
+                    (System.Data.SqlClient.SqlConnection)connection);
+                command.Parameters.Add(new SqlParameter("@DoctorID", doctorId));
+                command.CommandType = CommandType.StoredProcedure;
+                
+                var da = new SqlDataAdapter();
+                da.SelectCommand = command;
+                da.Fill(dataTable);
+            }
+
+            return dataTable;
+        }
+
+        public DataTable UpcomingAppointments_GetByDoctor(int doctorId)
+        {
+            DataTable dataTable = new DataTable();
+
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                SqlCommand command = new SqlCommand("spUpcomingAppointments_GetByDoctor",
+                    (System.Data.SqlClient.SqlConnection)connection);
+                command.Parameters.Add(new SqlParameter("@DoctorID", doctorId));
+                command.CommandType = CommandType.StoredProcedure;
+                
+                var da = new SqlDataAdapter();
+                da.SelectCommand = command;
+                da.Fill(dataTable);
+            }
+
+            return dataTable;
+        }
     }
 }

@@ -156,7 +156,12 @@ namespace HYS.Forms
         }
         void EditProfile()
         {
-            FormEditProfile ef = new FormEditProfile(false, null, Model, null, this);
+            FormEditProfile ef = new FormEditProfile(
+                false,
+                null,
+                Model,
+                null,
+                this);
             ef.Show();
         }
     }

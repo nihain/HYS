@@ -9,7 +9,7 @@ namespace HYS.Forms
     public partial class FormEditProfile : Form
     {
         private readonly bool _mode;
-        public DoctorModel DoctorModel;
+        private readonly DoctorModel _doctorModel;
         public PatientModel PatientModel;
         public FormDoctor PreviousDForm;
         public FormPatient PreviousPForm;
@@ -20,7 +20,7 @@ namespace HYS.Forms
             InitializeComponent();
 
             _mode = mode;
-            DoctorModel = doctorModel;
+            _doctorModel = doctorModel;
             PatientModel = patientModel;
             PreviousDForm = previousDForm;
             PreviousPForm = previousPForm;
@@ -33,10 +33,10 @@ namespace HYS.Forms
                 labelMode.Text = "Branş:";
                 labelMode.Location = new Point(labelMode.Location.X + 33, labelMode.Location.Y);
 
-                textBoxName.Text = DoctorModel.Name;
-                textBoxSurname.Text = DoctorModel.Surname;
-                maskedTextBoxTC.Text = DoctorModel.TcId;
-                textBoxBranch.Text = DoctorModel.Branch;
+                textBoxName.Text = _doctorModel.Name;
+                textBoxSurname.Text = _doctorModel.Surname;
+                maskedTextBoxTC.Text = _doctorModel.TcId;
+                textBoxBranch.Text = _doctorModel.Branch;
             }
             else
             {
@@ -67,8 +67,10 @@ namespace HYS.Forms
             {
                 textBoxPasswordNew.Enabled = false;
                 textBoxPasswordNew.Text = string.Empty;
+                textBoxPasswordNew.BackColor = Color.FromArgb(255, 25, 28, 33);
                 textBoxPasswordOld.Enabled = false;
                 textBoxPasswordOld.Text = string.Empty;
+                textBoxPasswordOld.BackColor = Color.FromArgb(255, 25, 28, 33);
             }
         }
 
@@ -154,13 +156,13 @@ namespace HYS.Forms
                 {
                     if (_mode)
                     {
-                        if (textBoxPasswordOld.Text == DoctorModel.Password)
+                        if (textBoxPasswordOld.Text == _doctorModel.Password)
                         {
-                            if (textBoxPasswordNew.Text != DoctorModel.Password)
+                            if (textBoxPasswordNew.Text != _doctorModel.Password)
                             {
                                 UpdateDoctorProfile(true);
-                                GlobalConfig.Connection.UpdateDoctorProfile(true, DoctorModel);
-                                PreviousDForm.Model = DoctorModel;
+                                GlobalConfig.Connection.UpdateDoctorProfile(true, _doctorModel);
+                                PreviousDForm.Model = _doctorModel;
                                 PreviousDForm.InitializeLabels();
                                 MessageBox.Show("Profil güncellendi!");
                                 Close();
@@ -173,7 +175,6 @@ namespace HYS.Forms
                         }
                         else
                         {
-                            textBoxPasswordNew.BackColor = Color.Red;
                             textBoxPasswordOld.BackColor = Color.Red;
                             MessageBox.Show("Girdiğiniz eski şifre yanlış.");
                         }
@@ -209,8 +210,8 @@ namespace HYS.Forms
                     if (_mode)
                     {
                         UpdateDoctorProfile(false);
-                        GlobalConfig.Connection.UpdateDoctorProfile(false, DoctorModel);
-                        PreviousDForm.Model = DoctorModel;
+                        GlobalConfig.Connection.UpdateDoctorProfile(false, _doctorModel);
+                        PreviousDForm.Model = _doctorModel;
                         PreviousDForm.InitializeLabels();
                         MessageBox.Show("Profil güncellendi!");
                         Close();
@@ -234,14 +235,14 @@ namespace HYS.Forms
 
         private void UpdateDoctorProfile(bool mode)
         {
-            DoctorModel.Name = textBoxName.Text;
-            DoctorModel.Surname = textBoxSurname.Text;
-            DoctorModel.TcId = maskedTextBoxTC.Text;
-            DoctorModel.Branch = textBoxBranch.Text;
+            _doctorModel.Name = textBoxName.Text;
+            _doctorModel.Surname = textBoxSurname.Text;
+            _doctorModel.TcId = maskedTextBoxTC.Text;
+            _doctorModel.Branch = textBoxBranch.Text;
 
             if (mode)
             {
-                DoctorModel.Password = textBoxPasswordNew.Text;
+                _doctorModel.Password = textBoxPasswordNew.Text;
             }
         }
 

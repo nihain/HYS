@@ -38,5 +38,11 @@ namespace HospitalLibrary.DataConnections
         void UpdateDoctorProfile(bool mode, DoctorModel model);
 
         void UpdatePatientProfile(bool mode, PatientModel model);
+        
+        DataTable AllAppointments_GetByDoctor(int doctorId);
+        
+        DataTable PastAppointments_GetByDoctor(int doctorId);
+        
+        DataTable UpcomingAppointments_GetByDoctor(int doctorId);
     }
 }

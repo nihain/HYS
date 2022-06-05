@@ -13,9 +13,7 @@ namespace HYS.Forms
         {
             InitializeComponent();
         }
-        
-        //TODO: Implement TC checks
-        
+
         /// <summary>
         /// Disable animation triggers.
         /// </summary>
@@ -537,7 +535,11 @@ namespace HYS.Forms
 
                 if (profile)
                 {
-                    //TODO: Implement doctor form
+                    GlobalConfig.Connection.DoctorLogin(model);
+                    FormDoctor df = new FormDoctor(model, this);
+                    df.Show();
+                    Hide();
+                    ResetForm();
                 }
                 else
                 {

@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
+using HospitalLibrary;
 using HospitalLibrary.Models;
 
 namespace HYS.Forms
 {
-    //TODO: create edit profile button
-    //TODO: set constructor
-    
     public partial class FormDoctor : Form
     {
         private readonly FormLoginRegister _previousForm;
@@ -18,6 +16,10 @@ namespace HYS.Forms
 
             _previousForm = previousForm;
             Model = model;
+
+            dataGridView1.DataSource = GlobalConfig.Connection.AllAppointments_GetByDoctor(Model.Id);
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             
             InitializeLabels();
         }
@@ -42,7 +44,39 @@ namespace HYS.Forms
 
         private void FormDoctor_Load(object sender, EventArgs e)
         {
+            dataGridView1.ClearSelection();
+        }
 
+        private void buttonEditProfile_Click(object sender, EventArgs e)
+        {
+            FormEditProfile ef = new FormEditProfile(
+                true,
+                Model,
+                null,
+                this,
+                null);
+            ef.Show();
+        }
+
+        private void buttonGridAll_Click(object sender, EventArgs e)
+        {
+            labelAppointmentsFilter.Text = "Tüm Randevular";
+            dataGridView1.DataSource = GlobalConfig.Connection.AllAppointments_GetByDoctor(Model.Id);
+            dataGridView1.ClearSelection();
+        }
+
+        private void buttonGridPast_Click(object sender, EventArgs e)
+        {
+            labelAppointmentsFilter.Text = "Geçmiş Randevular";
+            dataGridView1.DataSource = GlobalConfig.Connection.PastAppointments_GetByDoctor(Model.Id);
+            dataGridView1.ClearSelection();
+        }
+
+        private void buttonGridUpcoming_Click(object sender, EventArgs e)
+        {
+            labelAppointmentsFilter.Text = "Gelecek Randevular";
+            dataGridView1.DataSource = GlobalConfig.Connection.UpcomingAppointments_GetByDoctor(Model.Id);
+            dataGridView1.ClearSelection();
         }
     }
 }

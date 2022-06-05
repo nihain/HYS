@@ -127,6 +127,7 @@
             // 
             // textBoxPasswordNew
             // 
+            this.textBoxPasswordNew.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxPasswordNew.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
             this.textBoxPasswordNew.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPasswordNew.Enabled = false;
@@ -135,10 +136,11 @@
             this.textBoxPasswordNew.Location = new System.Drawing.Point(192, 269);
             this.textBoxPasswordNew.Name = "textBoxPasswordNew";
             this.textBoxPasswordNew.Size = new System.Drawing.Size(210, 25);
-            this.textBoxPasswordNew.TabIndex = 19;
+            this.textBoxPasswordNew.TabIndex = 8;
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
@@ -150,6 +152,7 @@
             // 
             // textBoxPasswordOld
             // 
+            this.textBoxPasswordOld.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxPasswordOld.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
             this.textBoxPasswordOld.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPasswordOld.Enabled = false;
@@ -158,10 +161,11 @@
             this.textBoxPasswordOld.Location = new System.Drawing.Point(192, 238);
             this.textBoxPasswordOld.Name = "textBoxPasswordOld";
             this.textBoxPasswordOld.Size = new System.Drawing.Size(210, 25);
-            this.textBoxPasswordOld.TabIndex = 17;
+            this.textBoxPasswordOld.TabIndex = 7;
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
@@ -173,19 +177,21 @@
             // 
             // checkBoxPassword
             // 
+            this.checkBoxPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBoxPassword.AutoSize = true;
             this.checkBoxPassword.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxPassword.ForeColor = System.Drawing.Color.Red;
             this.checkBoxPassword.Location = new System.Drawing.Point(91, 203);
             this.checkBoxPassword.Name = "checkBoxPassword";
             this.checkBoxPassword.Size = new System.Drawing.Size(317, 29);
-            this.checkBoxPassword.TabIndex = 15;
+            this.checkBoxPassword.TabIndex = 6;
             this.checkBoxPassword.Text = "Hesabın Şifresini Değiştir";
             this.checkBoxPassword.UseVisualStyleBackColor = true;
             this.checkBoxPassword.CheckedChanged += new System.EventHandler(this.checkBoxPassword_CheckedChanged);
             // 
             // textBoxBranch
             // 
+            this.textBoxBranch.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxBranch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
             this.textBoxBranch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxBranch.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -193,10 +199,11 @@
             this.textBoxBranch.Location = new System.Drawing.Point(192, 145);
             this.textBoxBranch.Name = "textBoxBranch";
             this.textBoxBranch.Size = new System.Drawing.Size(210, 25);
-            this.textBoxBranch.TabIndex = 13;
+            this.textBoxBranch.TabIndex = 4;
             // 
             // radioButtonFemale
             // 
+            this.radioButtonFemale.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonFemale.AutoSize = true;
             this.radioButtonFemale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
             this.radioButtonFemale.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -211,6 +218,7 @@
             // 
             // radioButtonMale
             // 
+            this.radioButtonMale.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.radioButtonMale.AutoSize = true;
             this.radioButtonMale.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
             this.radioButtonMale.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -218,13 +226,14 @@
             this.radioButtonMale.Location = new System.Drawing.Point(192, 143);
             this.radioButtonMale.Name = "radioButtonMale";
             this.radioButtonMale.Size = new System.Drawing.Size(85, 29);
-            this.radioButtonMale.TabIndex = 11;
+            this.radioButtonMale.TabIndex = 5;
             this.radioButtonMale.TabStop = true;
             this.radioButtonMale.Text = "Erkek";
             this.radioButtonMale.UseVisualStyleBackColor = false;
             // 
             // textBoxSurname
             // 
+            this.textBoxSurname.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
             this.textBoxSurname.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxSurname.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -232,10 +241,11 @@
             this.textBoxSurname.Location = new System.Drawing.Point(192, 81);
             this.textBoxSurname.Name = "textBoxSurname";
             this.textBoxSurname.Size = new System.Drawing.Size(210, 25);
-            this.textBoxSurname.TabIndex = 10;
+            this.textBoxSurname.TabIndex = 2;
             // 
             // textBoxName
             // 
+            this.textBoxName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
             this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxName.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -243,10 +253,11 @@
             this.textBoxName.Location = new System.Drawing.Point(192, 50);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(210, 25);
-            this.textBoxName.TabIndex = 9;
+            this.textBoxName.TabIndex = 1;
             // 
             // labelMode
             // 
+            this.labelMode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelMode.AutoSize = true;
             this.labelMode.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMode.ForeColor = System.Drawing.Color.White;
@@ -258,18 +269,20 @@
             // 
             // buttonMakeAppointment
             // 
+            this.buttonMakeAppointment.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonMakeAppointment.BackColor = System.Drawing.Color.SlateGray;
             this.buttonMakeAppointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMakeAppointment.Location = new System.Drawing.Point(160, 330);
             this.buttonMakeAppointment.Name = "buttonMakeAppointment";
             this.buttonMakeAppointment.Size = new System.Drawing.Size(180, 70);
-            this.buttonMakeAppointment.TabIndex = 5;
+            this.buttonMakeAppointment.TabIndex = 9;
             this.buttonMakeAppointment.Text = "Güncelle";
             this.buttonMakeAppointment.UseVisualStyleBackColor = false;
             this.buttonMakeAppointment.Click += new System.EventHandler(this.buttonMakeAppointment_Click);
             // 
             // maskedTextBoxTC
             // 
+            this.maskedTextBoxTC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.maskedTextBoxTC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(28)))), ((int)(((byte)(33)))));
             this.maskedTextBoxTC.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.maskedTextBoxTC.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -282,6 +295,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
@@ -293,6 +307,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
@@ -304,6 +319,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("IBM Plex Mono", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
@@ -323,6 +339,7 @@
             this.Font = new System.Drawing.Font("IBM Plex Mono", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MinimumSize = new System.Drawing.Size(500, 530);
             this.Name = "FormEditProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profil Düzenleme Menüsü";
