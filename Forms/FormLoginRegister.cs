@@ -328,7 +328,10 @@ namespace HYS.Forms
         {
             if (textBoxAdminUsername.Text == "admin" && textBoxAdminPassword.Text == "admin")
             {
-                ClearText();
+                FormAdmin af = new FormAdmin(this);
+                af.Show();
+                Hide();
+                ResetForm();
             }
         }
 

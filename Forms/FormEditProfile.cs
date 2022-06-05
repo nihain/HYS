@@ -10,9 +10,9 @@ namespace HYS.Forms
     {
         private readonly bool _mode;
         private readonly DoctorModel _doctorModel;
-        public PatientModel PatientModel;
-        public FormDoctor PreviousDForm;
-        public FormPatient PreviousPForm;
+        private readonly PatientModel _patientModel;
+        private readonly FormDoctor _previousDForm;
+        private readonly FormPatient _previousPForm;
 
         public FormEditProfile(bool mode, DoctorModel doctorModel, PatientModel patientModel,
             FormDoctor previousDForm, FormPatient previousPForm)
@@ -21,9 +21,9 @@ namespace HYS.Forms
 
             _mode = mode;
             _doctorModel = doctorModel;
-            PatientModel = patientModel;
-            PreviousDForm = previousDForm;
-            PreviousPForm = previousPForm;
+            _patientModel = patientModel;
+            _previousDForm = previousDForm;
+            _previousPForm = previousPForm;
 
             if (_mode)
             {
@@ -42,14 +42,14 @@ namespace HYS.Forms
             {
                 textBoxBranch.Hide();
 
-                textBoxName.Text = PatientModel.Name;
-                textBoxSurname.Text = PatientModel.Surname;
-                maskedTextBoxTC.Text = PatientModel.TcId;
-                if (PatientModel.Gender == true)
+                textBoxName.Text = _patientModel.Name;
+                textBoxSurname.Text = _patientModel.Surname;
+                maskedTextBoxTC.Text = _patientModel.TcId;
+                if (_patientModel.Gender == true)
                 {
                     radioButtonMale.Checked = true;
                 }
-                else if (PatientModel.Gender == false)
+                else if (_patientModel.Gender == false)
                 {
                     radioButtonFemale.Checked = true;
                 }
@@ -86,8 +86,6 @@ namespace HYS.Forms
             textBoxPasswordNew.BackColor = Color.FromArgb(255, 25, 28, 33);
             textBoxPasswordOld.BackColor = Color.FromArgb(255, 25, 28, 33);
 
-            bool? isMale;
-            
             bool isValid = true;
             if (textBoxName.Text.Length == 0)
             {
@@ -129,6 +127,7 @@ namespace HYS.Forms
             }
             else
             {
+                bool? isMale;
                 if (radioButtonMale.Checked)
                 {
                     isMale = true;
@@ -162,8 +161,8 @@ namespace HYS.Forms
                             {
                                 UpdateDoctorProfile(true);
                                 GlobalConfig.Connection.UpdateDoctorProfile(true, _doctorModel);
-                                PreviousDForm.Model = _doctorModel;
-                                PreviousDForm.InitializeLabels();
+                                _previousDForm.Model = _doctorModel;
+                                _previousDForm.InitializeLabels();
                                 MessageBox.Show("Profil güncellendi!");
                                 Close();
                             }
@@ -181,14 +180,14 @@ namespace HYS.Forms
                     }
                     else
                     {
-                        if (textBoxPasswordOld.Text == PatientModel.Password)
+                        if (textBoxPasswordOld.Text == _patientModel.Password)
                         {
-                            if (textBoxPasswordNew.Text != PatientModel.Password)
+                            if (textBoxPasswordNew.Text != _patientModel.Password)
                             {
                                 UpdatePatientProfile(true);
-                                GlobalConfig.Connection.UpdatePatientProfile(true, PatientModel);
-                                PreviousPForm.Model = PatientModel;
-                                PreviousPForm.InitializeLabels();
+                                GlobalConfig.Connection.UpdatePatientProfile(true, _patientModel);
+                                _previousPForm.Model = _patientModel;
+                                _previousPForm.InitializeLabels();
                                 MessageBox.Show("Profil güncellendi!");
                                 Close();
                             }
@@ -211,17 +210,17 @@ namespace HYS.Forms
                     {
                         UpdateDoctorProfile(false);
                         GlobalConfig.Connection.UpdateDoctorProfile(false, _doctorModel);
-                        PreviousDForm.Model = _doctorModel;
-                        PreviousDForm.InitializeLabels();
+                        _previousDForm.Model = _doctorModel;
+                        _previousDForm.InitializeLabels();
                         MessageBox.Show("Profil güncellendi!");
                         Close();
                     }
                     else
                     {
                         UpdatePatientProfile(false);
-                        GlobalConfig.Connection.UpdatePatientProfile(false, PatientModel);
-                        PreviousPForm.Model = PatientModel;
-                        PreviousPForm.InitializeLabels();
+                        GlobalConfig.Connection.UpdatePatientProfile(false, _patientModel);
+                        _previousPForm.Model = _patientModel;
+                        _previousPForm.InitializeLabels();
                         MessageBox.Show("Profil güncellendi!");
                         Close();
                     }
@@ -248,15 +247,15 @@ namespace HYS.Forms
 
         private void UpdatePatientProfile(bool mode)
         {
-            PatientModel.Name = textBoxName.Text;
-            PatientModel.Surname = textBoxSurname.Text;
-            PatientModel.TcId = maskedTextBoxTC.Text;
+            _patientModel.Name = textBoxName.Text;
+            _patientModel.Surname = textBoxSurname.Text;
+            _patientModel.TcId = maskedTextBoxTC.Text;
             bool isMale = radioButtonMale.Checked;
-            PatientModel.Gender = isMale;
+            _patientModel.Gender = isMale;
 
             if (mode)
             {
-                PatientModel.Password = textBoxPasswordNew.Text;
+                _patientModel.Password = textBoxPasswordNew.Text;
             }
         }
     }

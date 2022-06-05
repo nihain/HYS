@@ -21,6 +21,7 @@ namespace HYS.Forms
             dataGridView1.DataSource = GlobalConfig.Connection.AllAppointments_GetByPatient(Model.Id);
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            _filter = 0;
 
             InitializeLabels();
         }

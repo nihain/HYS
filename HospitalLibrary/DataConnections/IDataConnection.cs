@@ -7,17 +7,17 @@ namespace HospitalLibrary.DataConnections
 {
     public interface IDataConnection
     {
-        DoctorModel CreateDoctorProfile(DoctorModel model);
+        void CreateDoctorProfile(DoctorModel model);
 
-        PatientModel CreatePatientProfile(PatientModel model);
+        void CreatePatientProfile(PatientModel model);
 
         bool DoctorLoginCheck(DoctorModel model);
 
         bool PatientLoginCheck(PatientModel model);
 
-        DoctorModel DoctorLogin(DoctorModel model);
+        void DoctorLogin(DoctorModel model);
 
-        PatientModel PatientLogin(PatientModel model);
+        void PatientLogin(PatientModel model);
 
         List<string> GetDoctorBranches();
 
@@ -44,5 +44,19 @@ namespace HospitalLibrary.DataConnections
         DataTable PastAppointments_GetByDoctor(int doctorId);
         
         DataTable UpcomingAppointments_GetByDoctor(int doctorId);
+
+        List<int> HospitalDataCount();
+        
+        DataTable AllAppointments();
+        
+        DataTable AllDoctors();
+        
+        DataTable AllPatients();
+
+        void AdminDeleteAppointment(int id);
+        
+        void AdminDeleteDoctor(int id);
+        
+        void AdminDeletePatient(int id);
     }
 }

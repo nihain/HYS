@@ -13,7 +13,7 @@ namespace HYS.Forms
         private List<DoctorModel> _doctors;
         private readonly List<string> _defaultPrompt = new List<string>();
         private readonly int _patientId;
-        private FormPatient _previousForm;
+        private readonly FormPatient _previousForm;
 
         public FormAppointment(int patientId, FormPatient previousForm)
         {

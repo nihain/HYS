@@ -11,13 +11,13 @@ namespace HospitalLibrary.DataConnections
     public class SqlConnection : IDataConnection
     {
         private const string Db = "Hospital";
-        
+
         /// <summary>
         /// Saves a new doctor profile to database.
         /// </summary>
         /// <param name="model">Doctor information.</param>
         /// <returns>Doctor information, including the unique identifier.</returns>
-        public DoctorModel CreateDoctorProfile(DoctorModel model)
+        public void CreateDoctorProfile(DoctorModel model)
         {
             // Basically SqlConnection.Open() and SqlConnection.Close() in one block.
             using (IDbConnection connection =
@@ -36,8 +36,6 @@ namespace HospitalLibrary.DataConnections
                 connection.Execute("dbo.spDoctors_Insert", p, commandType: CommandType.StoredProcedure);
 
                 model.Id = p.Get<int>("@id");
-
-                return model;
             }
         }
 
@@ -46,7 +44,7 @@ namespace HospitalLibrary.DataConnections
         /// </summary>
         /// <param name="model">Patient information.</param>
         /// <returns>Patient information, including the unique identifier.</returns>
-        public PatientModel CreatePatientProfile(PatientModel model)
+        public void CreatePatientProfile(PatientModel model)
         {
             using (IDbConnection connection =
                    new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
@@ -62,8 +60,6 @@ namespace HospitalLibrary.DataConnections
                 connection.Execute("dbo.spPatients_Insert", p, commandType: CommandType.StoredProcedure);
 
                 model.Id = p.Get<int>("@id");
-
-                return model;
             }
         }
 
@@ -113,7 +109,7 @@ namespace HospitalLibrary.DataConnections
             }
         }
 
-        public DoctorModel DoctorLogin(DoctorModel model)
+        public void DoctorLogin(DoctorModel model)
         {
             using (IDbConnection connection =
                    new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
@@ -134,11 +130,9 @@ namespace HospitalLibrary.DataConnections
                     model.CreateDate = Convert.ToDateTime(reader[6]);
                 }
             }
-
-            return model;
         }
 
-        public PatientModel PatientLogin(PatientModel model)
+        public void PatientLogin(PatientModel model)
         {
             using (IDbConnection connection =
                    new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
@@ -159,8 +153,6 @@ namespace HospitalLibrary.DataConnections
                     model.CreateDate = Convert.ToDateTime(reader[6]);
                 }
             }
-
-            return model;
         }
 
         public List<string> GetDoctorBranches()
@@ -403,6 +395,112 @@ namespace HospitalLibrary.DataConnections
             }
 
             return dataTable;
+        }
+
+        public List<int> HospitalDataCount()
+        {
+            List<int> output;
+
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                output = connection.Query<int>("dbo.spHospital_GetCount").ToList();
+            }
+
+            return output;
+        }
+
+        public DataTable AllAppointments()
+        {
+            DataTable dataTable = new DataTable();
+
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                SqlCommand command = new SqlCommand("spAllAppointments",
+                    (System.Data.SqlClient.SqlConnection)connection);
+                command.CommandType = CommandType.StoredProcedure;
+                
+                var da = new SqlDataAdapter();
+                da.SelectCommand = command;
+                da.Fill(dataTable);
+            }
+
+            return dataTable;
+        }
+
+        public DataTable AllDoctors()
+        {
+            DataTable dataTable = new DataTable();
+
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                SqlCommand command = new SqlCommand("spAllDoctors",
+                    (System.Data.SqlClient.SqlConnection)connection);
+                command.CommandType = CommandType.StoredProcedure;
+                
+                var da = new SqlDataAdapter();
+                da.SelectCommand = command;
+                da.Fill(dataTable);
+            }
+
+            return dataTable;
+        }
+
+        public DataTable AllPatients()
+        {
+            DataTable dataTable = new DataTable();
+
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                SqlCommand command = new SqlCommand("spAllPatients",
+                    (System.Data.SqlClient.SqlConnection)connection);
+                command.CommandType = CommandType.StoredProcedure;
+                
+                var da = new SqlDataAdapter();
+                da.SelectCommand = command;
+                da.Fill(dataTable);
+            }
+
+            return dataTable;
+        }
+
+        public void AdminDeleteAppointment(int id)
+        {
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@id", id);
+
+                connection.Execute("dbo.spAdminDelete_Appointment", p, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void AdminDeleteDoctor(int id)
+        {
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@id", id);
+
+                connection.Execute("dbo.spAdminDelete_Doctor", p, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void AdminDeletePatient(int id)
+        {
+            using (IDbConnection connection =
+                   new System.Data.SqlClient.SqlConnection(GlobalConfig.ConnectionString(Db)))
+            {
+                var p = new DynamicParameters();
+                p.Add("@id", id);
+
+                connection.Execute("dbo.spAdminDelete_Patient", p, commandType: CommandType.StoredProcedure);
+            }
         }
     }
 }
